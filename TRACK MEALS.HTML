@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Calorie and Water Intake Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('water.webp'); /* Replace with your image file name */
+            background-size: cover;
+            background-position: center;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        #analysis {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+    <b> <h1 class="text-center">Calorie and Water Intake Tracker</h1></b>
+        <form id="trackerForm" class="mb-4">
+            <div class="form-group">
+            <b><label for="entryDate">Date:</label></b>
+                <input type="date" id="entryDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+            <b><label for="mealCalories">Meal Calories:</label></b>
+                <input type="number" id="mealCalories" class="form-control" placeholder="Enter meal calories" required>
+            </div>
+            <div class="form-group">
+            <b> <label for="waterIntake">Water Intake (ml):</label></b>
+                <input type="number" id="waterIntake" class="form-control" placeholder="Enter water intake" required>
+            </div>
+            <div class="form-group">
+            <b>  <label>Notification Frequency:</label><br>
+                <input type="checkbox" id="every3Hours"> Every 3 Hours<br>
+                <input type="checkbox" id="early3Hours"> Everyday<br>
+                <input type="checkbox" id="oncePerDay"> Once Per Day<br>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Entry</button></b>
+        </form>
+
+        <canvas id="intakeChart" width="400" height="200"></canvas>
+
+        <!-- Daily Analysis Section -->
+        <div id="analysis">
+        <b> <h4>Daily Analysis</h4>
+            <p>Total Calories: <span id="totalCalories">0</span></p>
+            <p>Average Calories: <span id="avgCalories">0</span></p>
+            <p>Total Water Intake: <span id="totalWater">0</span> ml</p>
+            <p>Average Water Intake: <span id="avgWater">0</span> ml</p></b>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('intakeChart').getContext('2d');
+        const intakeChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Calories',
+                    data: [],
+                    fill: false,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Water Intake (ml)',
+                    data: [],
+                    fill: false,
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        let totalCalories = 0;
+        let totalWater = 0;
+        let entryCount = 0; // Track the number of entries
+
+        document.getElementById('trackerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const entryDate = new Date(document.getElementById('entryDate').value);
+            const mealCalories = parseInt(document.getElementById('mealCalories').value);
+            const waterIntake = parseInt(document.getElementById('waterIntake').value);
+
+            // Add the data to the chart
+            intakeChart.data.labels.push(entryDate.toLocaleDateString());
+            intakeChart.data.datasets[0].data.push(mealCalories);
+            intakeChart.data.datasets[1].data.push(waterIntake);
+            intakeChart.update();
+
+            // Update daily totals
+            totalCalories += mealCalories;
+            totalWater += waterIntake;
+            entryCount++; // Increment the number of entries
+
+            // Update analysis sections
+            document.getElementById('totalCalories').innerText = totalCalories;
+            document.getElementById('totalWater').innerText = totalWater;
+            document.getElementById('avgCalories').innerText = (totalCalories / entryCount).toFixed(2);
+            document.getElementById('avgWater').innerText = (totalWater / entryCount).toFixed(2);
+
+            // Retrieve notification preferences
+            const notifyEvery3Hours = document.getElementById('every3Hours').checked;
+            const notifyEarly = document.getElementById('everyday').checked;
+            const notifyOncePerDay = document.getElementById('oncePerDay').checked;
+
+            let notifications = [];
+            if (notifyEvery3Hours) notifications.push("Every 3 Hours");
+            if (notifyEarly) notifications.push("Early (3 AM)");
+            if (notifyOncePerDay) notifications.push("Once Per Day");
+
+            console.log("Notification Preferences: " + notifications.join(', '));
+
+            // Clear the form
+            document.getElementById('trackerForm').reset();
+        });
+    </script>
+</body>
+</html>
+   
