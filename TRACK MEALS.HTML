@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Calorie and Water Intake Tracker</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+    
     <style>
         body {
             background-image: url('water.webp'); /* Replace with your image file name */
@@ -20,10 +23,156 @@
             background-color: #ffffff;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+
         }
+
+        .navbar {
+      border-radius: 50px; /* Oval shape */
+      padding: 15px 40px; /* Adjust padding for better appearance */
+      background-color: #f8f8f8; /* Background color */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+      position: fixed; /* Make the navbar floating */
+      top: 20px; /* Distance from the top */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%); /* Center alignment */
+      width: 80%; /* Adjust width to 80% of the screen */
+      max-width: 1200px; /* Maximum width for the navbar */
+      z-index: 1000; /* Ensure navbar is above other elements */
+    }
+
+    /* Title styling */
+    .navbar-brand {
+      font-weight: bold; /* Bold font for the title */
+      font-size: 1.8rem; /* Increase font size */
+      color: darkgreen; /* Dark green color */
+      font-family: 'Arial', sans-serif; /* Change font family */
+      display: flex;
+      align-items: center;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    .navbar-brand img {
+      max-height: 50px; /* Adjust for a balanced height */
+      height: 50px; /* Ensure the logo fits within the navbar without making it too tall */
+      margin-right: 10px;
+    }
+
+    /* Centering the navbar items */
+    .navbar-nav {
+      flex-direction: row; /* Horizontal alignment */
+      justify-content: flex-end; /* Align items to the right */
+      width: 100%; /* Full width to distribute space */
+    }
+
+    /* Style for navbar items */
+    .navbar-nav .nav-item .nav-link {
+      color: green; /* Green color for menu items */
+      font-weight: bold; /* Bold font for menu items */
+      margin-left: 20px; /* Space between menu items */
+    }
+
+    /* Dropdown menu styling */
+    .dropdown-menu {
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style for the login button (Removed in this update)
+    .btn-login {
+      font-weight: bold; /* Make login button bold */
+      margin-left: 30px; /* Add space between menu items and Login button */
+      white-space: nowrap; /* Prevent text from wrapping */
+    }
+    */
     </style>
 </head>
 <body>
+
+    <section>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5 gradient-background">
+          <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+              <img src="./logo-removebg-preview (1).png" alt="Aarogya Logo" width="60" height="60">
+              Aaro<span style="color:#00C853;">gya</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+              aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <!-- Merged Navigation Items from the Second Navbar -->
+    
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+    
+                <!-- Fitness Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Fitness
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="lev1.html">Home Workout</a></li>
+                    <li><a class="dropdown-item" href="#">Gym Workout</a></li>
+                    <li><a class="dropdown-item" href="#">Yoga</a></li>
+                  </ul>
+                </li>
+    
+                <!-- Membership (Replaced "Personalised Progress") -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Membership</a>
+                </li>
+    
+                <!-- Nutrition Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Nutrition
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="lev1.html">Healthy Recipes</a></li>
+                    <li><a class="dropdown-item" href="#">Craving Replacements</a></li>
+                    <li><a class="dropdown-item" href="#">Calorie Counter</a></li>
+                  </ul>
+                </li>
+    
+                <!-- Track Progress Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Track Progress
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="lev1.html">Fitness Progress</a></li>
+                    <li><a class="dropdown-item" href="#">Mental Progress</a></li>
+                    <li><a class="dropdown-item" href="#">Nutritional Progress</a></li>
+                  </ul>
+                </li>
+    
+                <!-- Community -->
+                <li class="nav-item">
+                  <a class="nav-link" href="chatbot.html">Community</a>
+                </li>
+              </ul>
+              <!-- Removed the Login Button -->
+              <!--
+              <form class="d-flex" role="search">
+                <button class="btn btn-outline-success btn-login" type="submit">Login</button>
+              </form>
+              -->
+            </div>
+          </div>
+        </nav>
+      </section>
+    
+      <div class="container my-5 mt-5 pt-5 ">
+        <!-- Content goes here -->
+      </div>
+
     <div class="container mt-5">
     <b> <h1 class="text-center">Calorie and Water Intake Tracker</h1></b>
         <form id="trackerForm" class="mb-4">
