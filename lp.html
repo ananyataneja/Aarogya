@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarogya Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2f855a; /* Dark green */
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .remember-me input {
+            margin-right: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #2f855a; /* Dark green */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #276749; /* Darker green */
+        }
+
+        .forgot-password {
+            display: block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        /* Updated style for the navbar brand */
+        .navbar-brand {
+            display: flex; /* Flexbox for alignment */
+            align-items: center; /* Center items vertically */
+            justify-content: center; /* Center items horizontally */
+            font-size: 28px;
+            font-weight: bold;
+            color: #2f855a; /* Dark green for 'Aaro' */
+            margin-bottom: 20px; /* Add some space below the logo */
+        }
+        
+        .navbar-brand img {
+            margin-right: 0; /* No margin between image and text */
+        }
+        
+        .navbar-brand span {
+            color: #00C853; /* Keeping 'gya' color as is */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <a class="navbar-brand" href="#">
+            <img src="./logo-removebg-preview (1).png" alt="Aarogya Logo" width="60" height="60">
+            Aaro<span>gya</span> <!-- Removed inline style to use CSS -->
+        </a>
+        <form id="loginForm" onsubmit="return handleLogin(event)">
+            <div class="input-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" required placeholder="Email Address">
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required placeholder="Password">
+            </div>
+            <div class="remember-me">
+                <input type="checkbox" id="rememberMe">
+                <label for="rememberMe">Remember me</label>
+            </div>
+            <button type="submit">Log in</button>
+        </form>
+        <a href="#" class="forgot-password">Forgot your password?</a>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Basic validation
+            if (email === '' || password === '') {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Redirect to abc.html
+            window.location.href = './login.html';
+        }
+    </script>
+</body>
+</html>

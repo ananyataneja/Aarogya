@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aarogya</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+
+    /* Existing Styles */
+    #footer {
+      width: 100%;
+    }
+
+    footer {
+      padding: 20px; /* Adjust the padding value as needed */
+    }
+
+    .hero-section {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 60px;
+      margin-top: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-text {
+      flex: 1;
+      margin-right: 50px;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      color: #00C853;
+      font-weight: bold;
+    }
+
+    .hero-text p {
+      font-size: 1.25rem;
+      margin: 20px 0;
+      color: #333;
+    }
+
+    .hero-buttons {
+      margin-top: 30px;
+    }
+
+    .hero-buttons .btn {
+      margin-right: 15px;
+      padding: 15px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 50px;
+    }
+
+    .hero-buttons .btn-green {
+      background-color: #00C853;
+      color: white;
+    }
+
+    .hero-buttons .btn-outline {
+      border: 2px solid #00C853;
+      color: #00C853;
+    }
+
+    .hero-image {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f7f7f7;
+    }
+
+    /* Testimonials Section */
+    .testimonials-container {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .testimonial-card {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 30%;
+      transition: transform 0.3s;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .testimonial-card .icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #00C853;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .testimonial-card h3 {
+      font-size: 18px;
+      margin: 0;
+      color: #00C853;
+    }
+
+    .testimonial-card h4 {
+      font-size: 14px;
+      margin: 5px 0;
+      color: #00C853;
+    }
+
+    .testimonial-card p {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-card a {
+      font-size: 12px;
+      color: #008000;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Styles for hiding and showing full review */
+    .testimonial-full-review {
+      display: none;
+    }
+
+    .testimonial-short-review {
+      display: block;
+    }
+
+    /* Add custom styling for the navbar */
+    .navbar {
+      border-radius: 50px; /* Oval shape */
+      padding: 15px 40px; /* Adjust padding for better appearance */
+      background-color: #f8f8f8; /* Background color */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+      position: fixed; /* Make the navbar floating */
+      top: 20px; /* Distance from the top */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%); /* Center alignment */
+      width: 80%; /* Adjust width to 80% of the screen */
+      max-width: 1200px; /* Maximum width for the navbar */
+      z-index: 1000; /* Ensure navbar is above other elements */
+    }
+
+    /* Title styling */
+    .navbar-brand {
+      font-weight: bold; /* Bold font for the title */
+      font-size: 1.8rem; /* Increase font size */
+      color: darkgreen; /* Dark green color */
+      font-family: 'Arial', sans-serif; /* Change font family */
+      display: flex;
+      align-items: center;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    .navbar-brand img {
+      max-height: 50px; /* Adjust for a balanced height */
+      height: 50px; /* Ensure the logo fits within the navbar without making it too tall */
+      margin-right: 10px;
+    }
+
+    /* Centering the navbar items */
+    .navbar-nav {
+      flex-direction: row; /* Horizontal alignment */
+      justify-content: flex-end; /* Align items to the right */
+      width: 100%; /* Full width to distribute space */
+    }
+
+    /* Style for navbar items */
+    .navbar-nav .nav-item .nav-link {
+      color: green; /* Green color for menu items */
+      font-weight: bold; /* Bold font for menu items */
+      margin-left: 20px; /* Space between menu items */
+    }
+
+    /* Dropdown menu styling */
+    .dropdown-menu {
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style for the login button (Removed in this update)
+    .btn-login {
+      font-weight: bold; /* Make login button bold */
+      margin-left: 30px; /* Add space between menu items and Login button */
+      white-space: nowrap; /* Prevent text from wrapping */
+    }
+    */
+
+  </style>
+</head>
+
+<body>
+
+
+  
+  
+  <section>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5 gradient-background">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="./logo-removebg-preview (1).png" alt="Aarogya Logo" width="60" height="60">
+          Aaro<span style="color:#00C853;">gya</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <!-- Merged Navigation Items from the Second Navbar -->
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+
+            <!-- Fitness Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Fitness
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="lev1.html">Home Workout</a></li>
+                <li><a class="dropdown-item" href="#">Gym Workout</a></li>
+                <li><a class="dropdown-item" href="#">Yoga</a></li>
+              </ul>
+            </li>
+
+            <!-- Membership (Replaced "Personalised Progress") -->
+            <li class="nav-item">
+              <a class="nav-link" href="#">Membership</a>
+            </li>
+
+            <!-- Nutrition Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Nutrition
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="lev1.html">Healthy Recipes</a></li>
+                <li><a class="dropdown-item" href="#">Craving Replacements</a></li>
+                <li><a class="dropdown-item" href="#">Calorie Counter</a></li>
+              </ul>
+            </li>
+
+            <!-- Track Progress Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Track Progress
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="lev1.html">Fitness Progress</a></li>
+                <li><a class="dropdown-item" href="#">Mental Progress</a></li>
+                <li><a class="dropdown-item" href="#">Nutritional Progress</a></li>
+              </ul>
+            </li>
+
+            <!-- Community -->
+            <li class="nav-item">
+              <a class="nav-link" href="chatbot.html">Community</a>
+            </li>
+          </ul>
+          <!-- Removed the Login Button -->
+          <!--
+          <form class="d-flex" role="search">
+            <button class="btn btn-outline-success btn-login" type="submit">Login</button>
+          </form>
+          -->
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <div class="container my-5 mt-5 pt-5 ">
+    <!-- Content goes here -->
+  </div>
+
+  <div class="container marketing">
+
+   <!-- Why Choose Us Heading -->
+<div class="text-center my-4">
+  <h1 style="color: darkgreen; font-size: 3em; font-weight: bold;">Why Choose Us?</h1>
+</div>
+
+<!-- Description Text Centered Under Heading -->
+<div class="row">
+  <div class="col-lg-12 text-center">
+    <p style="font-size: 1.2em; color: #555; line-height: 1.4;">
+      We’re your one-stop solution from dynamic workout routines to personalized meal plans,<br>
+      and help you track your daily progress effortlessly. Explore these exclusive features on a single platform<br>
+      and elevate your health journey today!
+    </p>
+  </div>
+</div>
+
+<!-- Three columns of text below the carousel -->
+<div class="row" style="margin-top: 40px;"> <!-- Added margin-top for spacing -->
+  <div class="col-lg-4 text-center">
+    <img class="rounded-circle" src="./head2.jpg" alt="Generic placeholder image" width="140" height="140">
+    <h2>Workout Zone</h2>
+    <p>Transform your fitness journey with our engaging workout videos. From strength training to yoga, each session is designed to challenge you and keep you motivated. Join us and sweat together!</p>
+    <p><a class="btn btn-success" href="#" role="button">Start Now »</a></p> <!-- Changed to btn-success -->
+  </div><!-- /.col-lg-4 -->
+  
+  <div class="col-lg-4 text-center">
+    <img class="rounded-circle" src="./head3.png" alt="Generic placeholder image" width="140" height="140">
+    <h2>Diet Plans</h2>
+    <p>Fuel your body with our tailored meal plans and nutrition tips. Discover delicious recipes and practical advice for healthy eating. Nourish yourself and embrace wellness effortlessly!</p>
+    <p><a class="btn btn-success" href="#" role="button">Start Now »</a></p> <!-- Changed to btn-success -->
+  </div><!-- /.col-lg-4 -->
+
+  <div class="col-lg-4 text-center">
+    <img class="rounded-circle" src="./head7.jpeg" alt="Generic placeholder image" width="140" height="140">
+    <h2>Progress Tracker</h2>
+    <p>Stay on track with our easy-to-use tracking tools. Monitor your progress and set achievable goals. Celebrate your milestones and make every day count on your health journey!</p>
+    <p><a class="btn btn-success" href="#" role="button">Start Now »</a></p> <!-- Changed to btn-success -->
+  </div><!-- /.col-lg-4 -->
+</div><!-- /.row -->
+
+
+
+
+<!-- START THE FEATURETTES -->
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+  <div class="col-md-7">
+    <h2 class="featurette-heading">Fitness <span class="text-muted">Elevate Your Workout</span></h2>
+    <p class="lead">Unlock your potential with our fitness programs, featuring gym workouts for strength, home workouts for convenience, and yoga for balance. Each section offers tailored routines to enhance your fitness journey, no matter where you are.</p>
+    <p>
+      <a class="btn btn-success" href="#" role="button">Gym Workouts</a>
+      <a class="btn btn-success" href="#" role="button">Home Workouts</a>
+      <a class="btn btn-success" href="#" role="button">Yoga Classes</a>
+    </p> <!-- 3 buttons -->
+  </div>
+  <div class="col-md-5">
+    <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="./img1.jpeg" data-holder-rendered="true" style="width: 500px; height: 300px;">
+  </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+  <div class="col-md-7 order-md-2">
+    <h2 class="featurette-heading">Membership <span class="text-muted">Join the Movement.</span></h2>
+    <p class="lead">Become a member and unlock exclusive benefits tailored to enhance your wellness journey. Enjoy personalized plans, expert guidance, and access to a supportive community, all designed to help you reach your health goals.</p>
+    <p>
+      <a class="btn btn-success" href="#" role="button">Join Now</a>
+    </p> <!-- 1 button -->
+  </div>
+  <div class="col-md-5 order-md-1">
+    <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="./img3.jpg" data-holder-rendered="true" style="width: 500px; height: 300px;">
+  </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+  <div class="col-md-7">
+    <h2 class="featurette-heading">Nutrition <span class="text-muted">Nourish to Flourish</span></h2>
+    <p class="lead">Transform your eating habits with our healthy recipes, calorie counter, and craving alternatives. Enjoy delicious meals that promote wellness, easily track your intake, and find guilt-free substitutes for your favorite treats.</p>
+    <p>
+      <a class="btn btn-success" href="#" role="button">Healthy Recipes</a>
+      <a class="btn btn-success" href="#" role="button">Calorie Counter</a>
+      <a class="btn btn-success" href="#" role="button">Craving Alternatives</a>
+    </p> <!-- 3 buttons -->
+  </div>
+  <div class="col-md-5">
+    <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="./img4.webp" data-holder-rendered="true" style="width: 500px; height: 300px;">
+  </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+  <div class="col-md-7 order-md-2">
+    <h2 class="featurette-heading">Track Progress <span class="text-muted">Your Journey, Your Way</span></h2>
+    <p class="lead">Stay on track with our intuitive tools to monitor workouts, meals, and mental health. Track your fitness achievements, maintain a balanced diet, and reflect on your moods for a comprehensive view of your well-being.</p>
+    <p>
+      <a class="btn btn-success" href="#" role="button">Monitor Workouts</a>
+      <a class="btn btn-success" href="#" role="button">Track Meals</a>
+      <a class="btn btn-success" href="#" role="button">Reflect on Mood</a>
+    </p> <!-- 3 buttons -->
+  </div>
+  <div class="col-md-5 order-md-1">
+    <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="./img5.jpg" data-holder-rendered="true" style="width: 500px; height: 300px;">
+  </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+  <div class="col-md-7">
+    <h2 class="featurette-heading">Community <span class="text-muted">Connect and Thrive</span></h2>
+    <p class="lead">Join our supportive community of health enthusiasts. Share experiences, seek advice, and motivate each other on your journey to wellness, creating a collaborative environment for growth and success.</p>
+    <p>
+      <a class="btn btn-success" href="#" role="button">Join the Community</a>
+    </p> <!-- 1 button -->
+  </div>
+  <div class="col-md-5">
+    <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="./img6.jpeg" data-holder-rendered="true" style="width: 500px; height: 300px;">
+  </div>
+</div>
+
+<hr class="featurette-divider">
+
+<!-- /END THE FEATURETTES -->
+
+
+  </div>
+
+  <!-- Carousel -->
+  <div id="carouselExampleAutoplaying" class="carousel slide mt-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="car1.png" class="d-block w-100" alt="..." style="height: 500px; object-fit: cover;">
+      </div>
+      <div class="carousel-item">
+        <img src="car4.png" class="d-block w-100" alt="..." style="height: 500px; object-fit: cover;">
+      </div>
+      <div class="carousel-item">
+        <img src="car2.png" class="d-block w-100" alt="..." style="height: 500px; object-fit: cover;">
+      </div>
+      <div class="carousel-item">
+        <img src="car3.png" class="d-block w-100" alt="..." style="height: 500px; object-fit: cover;">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  
+  <!-- Bootstrap JS Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+  <!-- Footer -->
+  <section id="footer" class="gradient-background">
+    <div class="container mt-5">
+      <footer class="py-1 pt-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>General</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Cookie Policy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Legal</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Legal</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terms</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Social</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Intellectual Property</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Properties</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Destinations</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Press Room</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Promo Code</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Tech Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of what's new and exciting from us.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden">Email address</label>
+                <input id="newsletter1" type="email" class="form-control" placeholder="Email address" required>
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>© 2024 Aarogya, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#">GitHub</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Twitter</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Facebook</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+</body>
+
+</html>

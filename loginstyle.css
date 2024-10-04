@@ -1,0 +1,4 @@
+function toggleDropdown(option) {
+    // Logic to toggle dropdown options based on the section
+    console.log(option + " dropdown toggled");
+}
