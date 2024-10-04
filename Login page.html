@@ -89,12 +89,34 @@
         .forgot-password:hover {
             text-decoration: underline;
         }
+
+        /* Updated style for the navbar brand */
+        .navbar-brand {
+            display: flex; /* Flexbox for alignment */
+            align-items: center; /* Center items vertically */
+            justify-content: center; /* Center items horizontally */
+            font-size: 28px;
+            font-weight: bold;
+            color: #2f855a; /* Dark green for 'Aaro' */
+            margin-bottom: 20px; /* Add some space below the logo */
+        }
+        
+        .navbar-brand img {
+            margin-right: 0; /* No margin between image and text */
+        }
+        
+        .navbar-brand span {
+            color: #00C853; /* Keeping 'gya' color as is */
+        }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <h2>Aarogya</h2>
-        <form id="loginForm" onsubmit="return validateForm()">
+        <a class="navbar-brand" href="#">
+            <img src="./logo-removebg-preview (1).png" alt="Aarogya Logo" width="60" height="60">
+            Aaro<span>gya</span> <!-- Removed inline style to use CSS -->
+        </a>
+        <form id="loginForm" onsubmit="return handleLogin(event)">
             <div class="input-group">
                 <label for="email">Email Address:</label>
                 <input type="email" id="email" required placeholder="Email Address">
@@ -113,23 +135,21 @@
     </div>
 
     <script>
-        function validateForm() {
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent the default form submission
+
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
             // Basic validation
             if (email === '' || password === '') {
                 alert('Please fill in all fields.');
-                return false;
+                return;
             }
 
-            // For demonstration purposes
-            alert('Login successful!'); 
-            // Here, you would typically handle the login logic (e.g., API call).
-
-            return false; // Prevent page refresh
+            // Redirect to abc.html
+            window.location.href = './login.html';
         }
     </script>
 </body>
 </html>
-
