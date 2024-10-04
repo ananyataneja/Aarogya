@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Healthy Recipes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+   
+    <link rel="stylesheet" href="extrastyles.css">
+    <style>
+         /* Existing Styles */
+    #footer {
+      width: 100%;
+    }
+
+    footer {
+      padding: 20px; /* Adjust the padding value as needed */
+    }
+    .gradient-background {
+    background: linear-gradient(300deg,#ffffff,#ccdbd0);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+  }
+  
+  .module{
+    background-image: url("./images/Module\ adventures.jpg");
+  }
+  .test{
+    font-weight: 500;
+  }
+    </style>
+</head>
+<body>
+    <section>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5 gradient-background">
+          <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+              <img src="./logo-removebg-preview (1).png" alt="Aarogya Logo" width="60" height="60">
+              Aaro<span style="color:#00C853;">gya</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+              aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <!-- Merged Navigation Items from the Second Navbar -->
+    
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+    
+                <!-- Fitness Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Fitness
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="lev1.html">Home Workout</a></li>
+                    <li><a class="dropdown-item" href="#">Gym Workout</a></li>
+                    <li><a class="dropdown-item" href="#">Yoga</a></li>
+                  </ul>
+                </li>
+    
+                <!-- Membership (Replaced "Personalised Progress") -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Membership</a>
+                </li>
+    
+                <!-- Nutrition Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Nutrition
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="lev1.html">Healthy Recipes</a></li>
+                    <li><a class="dropdown-item" href="#">Craving Replacements</a></li>
+                    <li><a class="dropdown-item" href="#">Calorie Counter</a></li>
+                  </ul>
+                </li>
+    
+                <!-- Track Progress Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Track Progress
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="lev1.html">Fitness Progress</a></li>
+                    <li><a class="dropdown-item" href="#">Mental Progress</a></li>
+                    <li><a class="dropdown-item" href="#">Nutritional Progress</a></li>
+                  </ul>
+                </li>
+    
+                <!-- Community -->
+                <li class="nav-item">
+                  <a class="nav-link" href="chatbot.html">Community</a>
+                </li>
+              </ul>
+              <!-- Removed the Login Button -->
+              <!--
+              <form class="d-flex" role="search">
+                <button class="btn btn-outline-success btn-login" type="submit">Login</button>
+              </form>
+              -->
+            </div>
+          </div>
+        </nav>
+      </section>
+    
+      <div class="container my-5 mt-5 pt-5 ">
+        <!-- Content goes here -->
+      </div>
+    
+      <div class="container marketing">
+    <header>
+        <h1>Healthy Recipes</h1>
+    </header>
+
+    <section class="recipes-container">
+        <!-- Recipe Card 1 -->
+        <div class="recipe-card">
+            <h2>Chickpea Salad with Cucumber & Carrots</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PrJH8QFmtFE?si=48uZQLmBGquYcpds" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p><strong>Calories:</strong> 328 calories</p>
+            <button class="read-more-btn" onclick="toggleIngredients(this)">Read More</button>
+            <div class="ingredients" style="display: none;">
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>1 cup boiled chickpeas: 164 calories</li>
+                    <li>1 medium cucumber: 16 calories</li>
+                    <li>1 medium carrot: 25 calories</li>
+                    <li>1 tablespoon olive oil: 119 calories</li>
+                    <li>1 tablespoon lemon juice: 4 calories</li>
+                    <li>Salt: to taste</li>
+                    <li>Black pepper: to taste</li>
+                  
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>Boil Chickpeas: Soak 1 cup dried chickpeas overnight, then boil until tender (about 1-1.5 hours) or use canned chickpeas.</li>
+                    <li>Prepare Veggies: Wash, peel, and chop 1 cucumber and 1 carrot into small chunks.</li>
+                    <li>Make Dressing: Mix 1 tablespoon olive oil, 1 tablespoon lemon juice, salt, and black pepper in a small bowl.</li>
+                    <li>Combine: In a large bowl, mix boiled chickpeas, cucumber, and carrot. Pour the dressing over and toss well.</li>
+                    <li>Serve: Adjust seasoning to taste and enjoy fresh!</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Recipe Card 2 -->
+        <div class="recipe-card">
+            <h2>Rajma & Vegetable Pulao</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3c95FtauhME?si=1OSIIR6bTvdvapM2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p><strong>Calories:</strong> 400 kcal</p>
+            <button class="read-more-btn" onclick="toggleIngredients(this)">Read More</button>
+            <div class="ingredients" style="display: none;">
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>1 chicken breast</li>
+                    <li>1 tbsp olive oil</li>
+                    <li>1 tsp garlic powder</li>
+                    <li>Salt and pepper to taste</li>
+                    <li>1 cup broccoli florets</li>
+                    <li>1 cup carrot slices</li>
+                    <li>1 cup sliced bell peppers</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>Preheat grill to medium-high heat.</li>
+                    <li>Brush chicken with olive oil and season with garlic powder, salt, and pepper.</li>
+                    <li>Grill chicken for 6-8 minutes on each side.</li>
+                    <li>Steam vegetables for 5-7 minutes and serve.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Recipe Card 3 -->
+        <div class="recipe-card">
+            <h2>Almond Butter and Raspberry Smoothie Bowl</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/-NMsB4RTfS0?si=zh2yqG9ynpfGYXNB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p><strong>Calories (without toppings):</strong> 283 calories</p>
+            <button class="read-more-btn" onclick="toggleIngredients(this)">Read More</button>
+            <div class="ingredients" style="display: none;">
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>1 cup frozen raspberries: ~65 calories</li>
+                    <li>1 medium banana: ~105 calories</li>
+                    <li>1 tablespoon almond butter: ~98 calories</li>
+                    <li>1/2 cup almond milk (unsweetened): ~15 calories</li>
+                    <li>Toppings: sliced fruits, granola, chia seeds</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>In a blender, combine 1 cup frozen raspberries, 1 medium banana, 1 tablespoon almond butter, and 1/2 cup almond milk. Blend until smooth add honey or maple syrup if you prefer a sweeter flavor. </li>
+                    <li>Pour into a bowl and add your desired toppings.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Recipe Card 4 -->
+        <div class="recipe-card">
+            <h2>Avocado Toast</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Mk3LEJkiywg?si=3acrtm9dok-ykaNL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p><strong>Calories:</strong> 250 kcal</p>
+            <button class="read-more-btn" onclick="toggleIngredients(this)">Read More</button>
+            <div class="ingredients" style="display: none;">
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>1 slice whole grain bread</li>
+                    <li>1/2 ripe avocado</li>
+                    <li>Salt and pepper to taste</li>
+                    <li>1 tsp olive oil</li>
+                    <li>Red pepper flakes (optional)</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>Toast the bread to your liking.</li>
+                    <li>Mash avocado and spread over toast.</li>
+                    <li>Drizzle with olive oil and season with salt, pepper, and red pepper flakes.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Recipe Card 5 -->
+        <div class="recipe-card">
+            <h2>Oatmeal with Berries</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/MM-ukHFZYgM?si=pS1DUU1dJRTNcwzf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p><strong>Calories:</strong> 300 kcal</p>
+            <button class="read-more-btn" onclick="toggleIngredients(this)">Read More</button>
+            <div class="ingredients" style="display: none;">
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>1/2 cup rolled oats</li>
+                    <li>1 cup water or milk</li>
+                    <li>1/4 cup mixed berries</li>
+                    <li>1 tbsp honey or maple syrup</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>In a saucepan, bring oats and water (or milk) to a boil.</li>
+                    <li>Simmer for 5-7 minutes, stirring occasionally.</li>
+                    <li>Top with berries and drizzle with honey or maple syrup.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Recipe Card 6 -->
+        <div class="recipe-card">
+            <h2>Vegetable Stir-fry</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/spDs_wzn8To?si=GDbljzdOZpjKVQ8x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p><strong>Calories:</strong> 320 kcal</p>
+            <button class="read-more-btn" onclick="toggleIngredients(this)">Read More</button>
+            <div class="ingredients" style="display: none;">
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>1 tbsp olive oil</li>
+                    <li>1/2 cup broccoli florets</li>
+                    <li>1/2 cup bell peppers, sliced</li>
+                    <li>1/2 cup carrot slices</li>
+                    <li>1 tbsp soy sauce</li>
+                    <li>1 garlic clove, minced</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>Heat olive oil in a pan over medium heat.</li>
+                    <li>Add garlic and stir for 30 seconds.</li>
+                    <li>Add vegetables and stir-fry for 5-7 minutes.</li>
+                    <li>Stir in soy sauce and serve immediately.</li>
+                </ol>
+            </div>
+        </div>
+        <!-- Recipe Card 7 -->
+        <div class="recipe-card">
+            <h2> Grilled Lemon Herb Chicken</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3CG13tE8dEo?si=3Anibbvvoxd3uXzm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p><strong>Calories:</strong>  ~220 calories (per 4 oz serving)</p>
+            <button class="read-more-btn" onclick="toggleIngredients(this)">Read More</button>
+            <div class="ingredients" style="display: none;">
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>4 oz chicken breast</li>
+                    <li>1 tablespoon olive oil</li>
+                    <li>1 tablespoon lemon juice</li>
+                    <li>1 teaspoon dried herbs (oregano, thyme, or basil)</li>
+                    <li>Salt and pepper to taste</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>Marinate chicken with olive oil, lemon juice, herbs, salt, and pepper for 30 minutes.</li>
+                    <li>Preheat grill and cook chicken for 6-7 minutes on each side until cooked through.</li>
+                    <li>Let rest, slice, and serve.</li>
+                </ol>
+            </div>
+        </div>
+        <!-- Recipe Card 8 -->
+        <div class="recipe-card">
+            <h2> Baked Salmon with Asparagus</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5oBOsumL8Uo?si=Fmz2nw_lVkigyTWl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p><strong>Calories:</strong> ~350 calories (for 4 oz salmon with 1 cup asparagus)</p>
+            <button class="read-more-btn" onclick="toggleIngredients(this)">Read More</button>
+            <div class="ingredients" style="display: none;">
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>4 oz salmon fillet</li>
+                    <li>1 cup asparagus</li>
+                    <li>1 tablespoon olive oil</li>
+                    <li>Salt and pepper to taste</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>Preheat oven to 400°F (200°C).</li>
+                    <li>Toss asparagus with olive oil, salt, and pepper; place on a baking sheet.</li>
+                    <li>Place salmon on the sheet, season, and top with lemon slices.</li>
+                    <li>Bake for 12-15 minutes until salmon is cooked through.</li>
+                </ol>
+            </div>
+        </div>
+        <!-- Recipe Card 9 -->
+        <div class="recipe-card">
+            <h2> Shrimp Stir-Fry</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/28jhiaVMBtE?si=37r9bOYu2EPrqoOk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p><strong>Calories:</strong>~250 calories (for 4 oz shrimp with veggies)</p>
+            <button class="read-more-btn" onclick="toggleIngredients(this)">Read More</button>
+            <div class="ingredients" style="display: none;">
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>4 oz shrimp, peeled and deveined</li>
+                    <li>1 cup mixed vegetables (broccoli, bell peppers, carrots)</li>
+                    <li>1 tablespoon soy sauce</li>
+                    <li>1 teaspoon sesame oil</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>Heat sesame oil in a pan, add shrimp and cook until pink.</li>
+                    <li>Add mixed vegetables and stir-fry for 3-4 minutes.</li>
+                    <li>Add soy sauce and cook for another minute.</li>
+                </ol>
+            </div>
+        </div>
+        <!-- Recipe Card 10 -->
+        <div class="recipe-card">
+            <h2>  Chicken Tikka Salad</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/uHV2l98-SkQ?si=eprfOhDWk0xBnvRM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p><strong>Calories:</strong> ~350 calories (for 4 oz chicken with salad)</p>
+            <button class="read-more-btn" onclick="toggleIngredients(this)">Read More</button>
+            <div class="ingredients" style="display: none;">
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>4 oz chicken breast, marinated in yogurt and spices</li>
+                    <li>Mixed salad greens</li>
+                    <li>1/4 cucumber, sliced</li>
+                    <li>1/4 red onion, sliced</li>
+                    <li>1 tablespoon vinaigrette</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>Grill or bake marinated chicken until cooked through, then slice.</li>
+                    <li>Toss salad greens, cucumber, onion, and vinaigrette in a bowl.</li>
+                    <li>Top with sliced chicken and serve.</li>
+                </ol>
+            </div>
+        </div>
+        <!-- Recipe Card 11 -->
+        <div class="recipe-card">
+            <h2> Egg and Spinach Breakfast Bowl</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9J7DxC2J_bE?si=NgCNGr7gHVNC-ni1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p><strong>Calories:</strong> ~290 calories (for 2 eggs and veggies)</p>
+            <button class="read-more-btn" onclick="toggleIngredients(this)">Read More</button>
+            <div class="ingredients" style="display: none;">
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>2 large eggs</li>
+                    <li>1 cup fresh spinach</li>
+                    <li>1/4 avocado</li>
+                    <li>Salt and pepper to taste</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>Sauté spinach in a non-stick pan until wilted.</li>
+                    <li>Scramble or fry eggs in the same pan, season with salt and pepper.</li>
+                    <li>Serve eggs over spinach, topped with sliced avocado.</li>
+                </ol>
+            </div>
+        </div>
+        <!-- Recipe Card 12 -->
+        <div class="recipe-card">
+            <h2> Lemon Garlic Shrimp with Broccoli</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/AWdhl9uB9E0?si=hd5ajPvRIPpugz2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p><strong>Calories:</strong>~280 calories (for 4 oz shrimp and 1 cup broccoli)</p>
+            <button class="read-more-btn" onclick="toggleIngredients(this)">Read More</button>
+            <div class="ingredients" style="display: none;">
+                <h3>Ingredients:</h3>
+                <ul>
+                    <li>4 oz shrimp, peeled and deveined</li>
+                    <li>1 cup broccoli florets</li>
+                    <li>2 cloves garlic, minced</li>
+                    <li>1 tablespoon olive oil</li>
+                    <li>Lemon juice, salt, and pepper</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>Heat olive oil in a pan, add garlic and sauté until fragrant.</li>
+                    <li>Add shrimp and broccoli, cooking until shrimp are pink and broccoli is tender.</li>
+                    <li>Finish with lemon juice, salt, and pepper before serving.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Footer -->
+  <section id="footer" class="gradient-background">
+    <div class="container mt-5">
+      <footer class="py-1 pt-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>General</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Cookie Policy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Legal</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Legal</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terms</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Social</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Intellectual Property</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Properties</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Destinations</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Press Room</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Promo Code</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Tech Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of what's new and exciting from us.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden">Email address</label>
+                <input id="newsletter1" type="email" class="form-control" placeholder="Email address" required>
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>© 2024 Aarogya, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#">GitHub</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Twitter</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Facebook</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+    <script>
+        function toggleIngredients(button) {
+            const ingredientsDiv = button.nextElementSibling;
+            if (ingredientsDiv.style.display === "none") {
+                ingredientsDiv.style.display = "block";
+                button.textContent = "Read Less";
+            } else {
+                ingredientsDiv.style.display = "none";
+                button.textContent = "Read More";
+            }
+        }
+    </script> 
+    
+    
+</body>
+</html>
+
+

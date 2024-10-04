@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calorie Counter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+    
+    <link rel="stylesheet" href="extrastyles.css">
+    <style>
+        
+
+ /* Add custom styling for the navbar */
+ .navbar {
+      border-radius: 50px; /* Oval shape */
+      padding: 15px 40px; /* Adjust padding for better appearance */
+      background-color: #f8f8f8; /* Background color */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+      position: fixed; /* Make the navbar floating */
+      top: 20px; /* Distance from the top */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%); /* Center alignment */
+      width: 80%; /* Adjust width to 80% of the screen */
+      max-width: 1200px; /* Maximum width for the navbar */
+      z-index: 1000; /* Ensure navbar is above other elements */
+    }
+
+    /* Title styling */
+    .navbar-brand {
+      font-weight: bold; /* Bold font for the title */
+      font-size: 1.8rem; /* Increase font size */
+      color: darkgreen; /* Dark green color */
+      font-family: 'Arial', sans-serif; /* Change font family */
+    }
+
+    /* Centering the navbar items */
+    .navbar-nav {
+      flex-direction: row; /* Horizontal alignment */
+      justify-content: flex-end; /* Align items to the right */
+      width: 100%; /* Full width to distribute space */
+    }
+
+    /* Style for navbar items */
+    .navbar-nav .nav-item .nav-link {
+      color: green; /* Green color for menu items */
+      font-weight: bold; /* Bold font for menu items */
+      margin-left: 30px; /* Space between menu items */
+    }
+
+    /* Ensure the login button is right-aligned */
+    .d-flex {
+      margin-left: auto; /* Pushes login button to the right */
+    }
+
+    /* Style for the login button */
+    .btn-login {
+      font-weight: bold; /* Make login button bold */
+      margin-left: 30px; /* Add space between FAQs and Login button */
+      white-space: nowrap; /* Prevent text from wrapping */
+    }
+ 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative; /* Allow absolute positioning for the search bar */
+        }
+        h1 {
+            margin: 0; /* Remove default margin */
+        }
+        .search-container {
+            position: absolute; /* Position the search bar */
+            right: 20px; /* Align to the right */
+            top: 10px; /* Adjust vertical position */
+        }
+        .search-container input {
+            padding: 10px; /* Increase padding for a bigger look */
+            width: 300px; /* Set a fixed width */
+            font-size: 16px; /* Increase font size */
+            border: 1px solid #ccc; /* Border styling */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            transition: border-color 0.3s; /* Transition for border color */
+        }
+        .search-container input:focus {
+            border-color: #007bff; /* Change border color on focus */
+            outline: none; /* Remove default outline */
+        }
+        .recipe-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            display: none; /* Initially hide all cards */
+        }
+        .recipe-card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .button-container a {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            flex: 1;
+            margin: 0 5px;
+            text-align: center;
+        }
+        .button-container a:hover {
+            background-color: #0056b3;
+        }
+        .serving-selector {
+            margin: 10px 0;
+        }
+         /* Existing Styles */
+    #footer {
+      width: 100%;
+    }
+
+    footer {
+      padding: 20px; /* Adjust the padding value as needed */
+    }
+    .gradient-background {
+    background: linear-gradient(300deg,#ffffff,#ccdbd0);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+  }
+  
+  .module{
+    background-image: url("./images/Module\ adventures.jpg");
+  }
+  .test{
+    font-weight: 500;
+  }
+    </style>
+</head>
+<body>
+    <section>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5 gradient-background">
+          <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+              <img src="./logo-removebg-preview (1).png" alt="Aarogya Logo" width="60" height="60">
+              Aaro<span style="color:#00C853;">gya</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+              aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <!-- Merged Navigation Items from the Second Navbar -->
+    
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+    
+                <!-- Fitness Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Fitness
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="lev1.html">Home Workout</a></li>
+                    <li><a class="dropdown-item" href="#">Gym Workout</a></li>
+                    <li><a class="dropdown-item" href="#">Yoga</a></li>
+                  </ul>
+                </li>
+    
+                <!-- Membership (Replaced "Personalised Progress") -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Membership</a>
+                </li>
+    
+                <!-- Nutrition Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Nutrition
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="lev1.html">Healthy Recipes</a></li>
+                    <li><a class="dropdown-item" href="#">Craving Replacements</a></li>
+                    <li><a class="dropdown-item" href="#">Calorie Counter</a></li>
+                  </ul>
+                </li>
+    
+                <!-- Track Progress Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Track Progress
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="lev1.html">Fitness Progress</a></li>
+                    <li><a class="dropdown-item" href="#">Mental Progress</a></li>
+                    <li><a class="dropdown-item" href="#">Nutritional Progress</a></li>
+                  </ul>
+                </li>
+    
+                <!-- Community -->
+                <li class="nav-item">
+                  <a class="nav-link" href="chatbot.html">Community</a>
+                </li>
+              </ul>
+              <!-- Removed the Login Button -->
+              <!--
+              <form class="d-flex" role="search">
+                <button class="btn btn-outline-success btn-login" type="submit">Login</button>
+              </form>
+              -->
+            </div>
+          </div>
+        </nav>
+      </section>
+    
+      <div class="container my-5 mt-5 pt-5 ">
+        <!-- Content goes here -->
+      </div>
+    
+      <div class="container marketing">
+    <header>
+        <h1>Calorie Counter</h1>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search for items..." onkeyup="filterRecipes()">
+        </div>
+    </header>
+
+    <section class="recipes-container">
+        <!-- Recipe Card -->
+        <div class="recipe-card" data-name="Rice" data-calories="685">
+            <h2>Rice</h2>
+            <img src="IMAGES\RICE.png" alt="Rice">
+            <p><strong>Calories per Serving:</strong> <span class="calories">685</span> kcal</p>
+            <div class="serving-selector">
+                <label for="servings-1">Servings:</label>
+                <select id="servings-1" onchange="updateCalories(1, this)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <p id="total-calories-1">Total Calories: ~685 kcal</p>
+            </div>
+            <div class="button-container">
+                <a href="https://www.amazon.in/India-Gate-Basmati-Rice-Dubar/dp/B07574XSJW/ref=sxin_12_pa_sp_search_thematic_sspa?content-id=amzn1.sym.cd33fa60-47cd-49f3-80b8-24b1f0cbef97%3Aamzn1.sym.cd33fa60-47cd-49f3-80b8-24b1f0cbef97&crid=2EXKYY15M36KI&cv_ct_cx=Rice&dib=eyJ2IjoiMSJ9.sJiwl-EInElx8RbzZ8Y6EISLoS4JM_5IXZOm7GYlpwwNXL4NKy3n169Qgng4jX3bCiNPXzIEq_QD7vzIwi-GUQ.3JucwcOEpOFaUzmgKvcLzC67GilviBLg9PHZcF6LhMo&dib_tag=se&keywords=Rice&nsdOptOutParam=true&pd_rd_i=B07574XSJW&pd_rd_r=8e4ecd92-8c19-434f-b893-749852d242f6&pd_rd_w=ht1iG&pd_rd_wg=z4hif&pf_rd_p=cd33fa60-47cd-49f3-80b8-24b1f0cbef97&pf_rd_r=2VHYPC72JA40CYMNJXM8&qid=1728038524&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=rice%2Caps%2C204&sr=1-4-ced4eeeb-b190-41d6-902a-1ecb3fb8b7c4-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM&psc=1" target="_blank">Amazon</a>
+                <a href="https://www.bigbasket.com/pd/40128964/bb-popular-new-rice-sona-masoori-5-kg/?nc=cl-prod-list&t_pos_sec=1&t_pos_item=1&t_s=New+Rice%252FAkki+-+Sona+Masoori" target="_blank">BigBasket</a>
+                <a href="https://blinkit.com/prn/daawat-rozana-super-basmati-rice-1-kg/prid/60660" target="_blank">Blinkit</a>
+            </div>
+        </div>
+
+        <!-- Second  Card -->
+        <div class="recipe-card" data-name="Chickpeas" data-calories="389">
+            <h2>Chickpeas</h2>
+            <img src="IMAGES/Chickpeas.jpg" alt="Chickpeas">
+            <p><strong>Calories per Serving:</strong> <span class="calories">389</span> kcal</p>
+            <div class="serving-selector">
+                <label for="servings-2">Servings:</label>
+                <select id="servings-2" onchange="updateCalories(2, this)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <p id="total-calories-2">Total Calories: 389 kcal</p>
+            </div>
+            <div class="button-container">
+                <a href="https://www.amazon.in/Safe-Harvest-Kabuli-Channa-1kg/dp/B00TH39FZC/ref=sr_1_1_sspa?crid=1U39JVFMFY3KD&dib=eyJ2IjoiMSJ9.-lLyVwpm7SXcGJXrDsEyjePXtmCt0dBkqCkqrrtGNrYlgCK0yKXV36JQz2_oKjmO96VBLIejaBAd6lWsnSNlS5331VJdbDPT_YuMUTV3T-6wMyrOAX9jCHyrPjgLzHzH2Ir85FrvVPfUvzp4Qxpl1yRLsFEBQLLnTg1Fwlage8OL-MzQgzaFh6Rw4rlqXm9G2TTnCEDh8ObtUo3gH6nPY51rkT2bvvPt8bNlmBZp8DmlStm3AzpL__dFIDiWW45KJV1aRwo7BxhHiliECwR42xNiOax2u5TeyzMU-Q3UcYU.xJ-wAHRPMQ-tzVB2tRoP9O2R1K25XhZGg6LhEXK30og&dib_tag=se&keywords=Chickpeas&qid=1728039285&sprefix=chickpeas%2Caps%2C221&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" target="_blank">Amazon</a>
+                <a href="https://www.bigbasket.com/pd/40135838/bb-royal-organic-brown-chanachanna-brown-2-kg/?nc=cl-prod-list&t_pos_sec=1&t_pos_item=1&t_s=Organic+-+Chana+Brown%252FKadale+Kaalu" target="_blank">BigBasket</a>
+                <a href="https://blinkit.com/prn/tata-sampann-unpolished-kabuli-chana-big-size/prid/101234" target="_blank">Blinkit</a>
+            </div>
+        </div>
+        <!--3 Card -->
+        <div class="recipe-card" data-name="Potatoes" data-calories="110">
+            <h2>Potatoes</h2>
+            <img src="IMAGES/Potatoes.jpeg" alt="Potatoes">
+            <p><strong>Calories per Serving:</strong> <span class="calories">110</span> kcal</p>
+            <div class="serving-selector">
+                <label for="servings-1">Servings:</label>
+                <select id="servings-1" onchange="updateCalories(3, this)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <p id="total-calories-3">Total Calories: 110 kcal</p>
+            </div>
+            <div class="button-container">
+                <a href="https://www.amazon.in/Fresh-Produce-Potato-500g-Pack/dp/B01IFIM1SW/ref=sr_1_1_f3_0o_fs?crid=3S0UY63KXRMI3&dib=eyJ2IjoiMSJ9.9uCHb1wsLo-z-FdfXzFGcXH4uixUJYnzwy0-naG3EscJr0abi2O7ikAQD4gRNg1wXzA2Y_y2L4nOBsxqYoEpA-UZGYldrnUfGHdHV426w6BuDn1K_m1AC4jMaFFsl6XWWZD7h93tjYOwE7682VEmnJTEIcBaMyFZ9p1m6acVXgrmOH0bdC7sx6ihGzJQmD0vcTpzCDP2-suRNyUgSwXcQeztFsJDw6kE1m3a9HQ4rbbNqVjYa-W1AngNM5MjDxlQ4fBDAR_SkacOjyOfrE8bhDNPOZKbYQYl7FaYSxBdacg.-sYAH77nSFkTZsa1v7Y9OILqNF2I22InsASgH2Y1l6E&dib_tag=se&keywords=Potatoes&qid=1728039746&sprefix=potatoes+%2Caps%2C254&sr=8-1"  target="_blank">Amazon</a>
+                <a href="https://www.bigbasket.com/pd/10000159/fresho-potato-1-kg/?nc=cl-prod-list&t_pos_sec=1&t_pos_item=1&t_s=Potato" target="_blank">BigBasket</a>
+                <a href="https://blinkit.com/prn/potato-0.95-kg-1.05-kg-aloo/prid/118916" target="_blank">Blinkit</a>
+            </div>
+        </div>
+        <!-- 4 Card -->
+        <div class="recipe-card" data-name="Cauliflower " data-calories="25">
+            <h2>Cauliflower </h2>
+            <img src="IMAGES/Cauliflower.jpg" alt="Cauliflower ">
+            <p><strong>Calories per Serving:</strong> <span class="calories">25</span> kcal</p>
+            <div class="serving-selector">
+                <label for="servings-1">Servings:</label>
+                <select id="servings-1" onchange="updateCalories(4, this)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <p id="total-calories-4">Total Calories: 25 kcal</p>
+            </div>
+            <div class="button-container">
+                <a href="https://www.amazon.in/Fresh-Cauliflower-Florets-250-gm/dp/B07BG6X7K4/ref=sr_1_1_f3_0g_fs?crid=UNQHRWY5A2GT&dib=eyJ2IjoiMSJ9.7VDllVvVo0rhgteS8L68m9R0-H1qQlch0ruhwFJHUWMJr0abi2O7ikAQD4gRNg1wy8olBWtjEC7KoLSqE6DGt_gEbHXitNeo8v0mGnOyQ_J23poF1pqzw0qVbvRVzuuo6w06Ys0DlBtT3Su2g9qmEV2K6_7hAYkee9GgsJjaKoy0PGlidFxtMAkIyYzWhE8EYVpjE_CuoGAtKeCSu_o9EbhaZTLB7sC9lIIGKOMU0kwZO6vQCyA40VoMFkF2gsIBokwCz7nFqwgzz7-lHUQrrw0L9Q2hSOa2GQ0OXteFwAU.uwcd9MIF6RW2R0NmQVXJn_riPxpLtDMqEEaJ_3z1guk&dib_tag=se&keywords=Cauliflower&qid=1728040117&refinements=p_123%3A114932&refresh=1&rnid=91049095031&s=grocery&sprefix=cauliflower+%2Caps%2C212&sr=1-1" target="_blank">Amazon</a>
+                <a href="https://www.bigbasket.com/pd/10000074/fresho-cauliflower-1-pc/?nc=cl-prod-list&t_pos_sec=1&t_pos_item=1&t_s=Cauliflower" target="_blank">BigBasket</a>
+                <a href="https://blinkit.com/prn/cauliflower-phool-gobhi/prid/339153" target="_blank">Blinkit</a>
+            </div>
+        </div>
+        <!-- 5 Card -->
+        <div class="recipe-card" data-name="Coriander (Cilantro) Bunch" data-calories="23">
+            <h2>Coriander (Cilantro) Bunch</h2>
+            <img src="IMAGES/Coriander (Cilantro) Bunch.jpg" alt="Coriander (Cilantro) Bunch">
+            <p><strong>Calories per Serving:</strong> <span class="calories">23 </span> kcal</p>
+            <div class="serving-selector">
+                <label for="servings-1">Servings:</label>
+                <select id="servings-1" onchange="updateCalories(5, this)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <p id="total-calories-5">Total Calories: 23 kcal</p>
+            </div>
+            <div class="button-container">
+                <a href="https://www.amazon.in/Fresh-Mint-Leaves-100g-Pack/dp/B07BG65QL5/ref=sr_1_2_f3_wg?almBrandId=ctnow&crid=24ZXVE239WG2U&dib=eyJ2IjoiMSJ9.3p7isRe7aazfz-oGvoy_89K9uJyxvTndXCyUNOzwweTAvpRyfV5hUnmc-pxMqZn0UdUBSEXOAaM0-TJf4l9-v804MWwuIXTNBwMlHORKCkR3XKes7PU3lesFckPoh37N94ANi5h5W_iFwTW-aH_NmDtWtZAuhwhMBiW6rG3Ugvd0iQm8D7u2hymEB4U7T4vjQ0Mqp1wwYU9WidWGPbuRSL8FpBn259n3pLo6-oUsP_VcFH2yIEgXFsyLCz9qyGuvjq2XMZXtizQLEu-5iq1md4eke8AFCA5-yRmLHnI79Rc.MyFL41p8-8EJ-D4juMx4lbyHWNB3w_1_UfJ50DRd_q4&dib_tag=se&fpw=alm&keywords=coriander+leaves&qid=1728040472&s=nowstore&sprefix=coriander%2Cnowstore%2C179&sr=1-2" target="_blank">Amazon</a>
+                <a href="https://www.bigbasket.com/pd/40083782/fresho-coriander-bulk-bunch-250-g/?nc=cl-prod-list&t_pos_sec=1&t_pos_item=1&t_s=Coriander+Bulk+Bunch" target="_blank">BigBasket</a>
+                <a href="https://blinkit.com/prn/coriander-bunch-dhaniya-patta/prid/3889" target="_blank">Blinkit</a>
+            </div>
+        </div>
+        <!-- 6 Card -->
+        <div class="recipe-card" data-name="Broccoli" data-calories="55">
+            <h2>Broccoli</h2>
+            <img src="IMAGES/Broccoli.jpg" alt="Broccoli">
+            <p><strong>Calories per Serving:</strong> <span class="calories">55</span> kcal</p>
+            <div class="serving-selector">
+                <label for="servings-1">Servings:</label>
+                <select id="servings-1" onchange="updateCalories(6, this)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <p id="total-calories-6">Total Calories: 55 kcal</p>
+            </div>
+            <div class="button-container">
+                <a href="https://www.amazon.in/Fresh-Brocolli-Florest-200-g/dp/B08YP22WGR/ref=sr_1_1_f3_wg?almBrandId=ctnow&crid=1LVCJPD185MD9&dib=eyJ2IjoiMSJ9.uJFlgVEk1FSpde7nhYMOSBq-i8DNNM3D1_PEoW0y5paQJIywtyoFtX_R9F44HzT0rgsDSp0po2AGmocFFsgCEbg5A9nEZHnZ6rXFnQoE2w-ujUfl6AEI6sopOcwAmLpYH-ykkan6f9mSlRcuNFJLcpdJiGdSDkJLe8h4U01m_gAfvgrnN82lzVIYab4smJDgjc5St09tzbGbDpB1bD995ZCuzxFxUqAeNQdJhVZoDhOhVzchrG0btyZQFKPG-38Uhe0R0nNEWy-cJdPuVMiVvU4Zst8QKVENQ1bDCwmoClg.rUchIrHrgn3BxQIjdD_bNTp67Pt9vQCwq5OLEK5PvGY&dib_tag=se&fpw=alm&keywords=broccoli+fresh+vegetables&nsdOptOutParam=true&qid=1728040881&s=nowstore&sprefix=Broccoli%2Cnowstore%2C189&sr=1-1" target="_blank">Amazon</a>
+                <a href="https://www.bigbasket.com/pd/10000063/fresho-broccoli-1-pc/?nc=cl-prod-list&t_pos_sec=1&t_pos_item=3&t_s=Broccoli" target="_blank">BigBasket</a>
+                <a href="https://blinkit.com/prn/broccoli/prid/369742" target="_blank">Blinkit</a>
+            </div>
+        </div>
+        <!-- 7 Card -->
+        <div class="recipe-card" data-name="Fish" data-calories="105">
+            <h2>Fish</h2>
+            <img src="IMAGES/fish.jpg" alt="Fish">
+            <p><strong>Calories per Serving:</strong> <span class="calories">105</span> kcal</p>
+            <div class="serving-selector">
+                <label for="servings-1">Servings:</label>
+                <select id="servings-1" onchange="updateCalories(7, this)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <p id="total-calories-7">Total Calories: 105 kcal</p>
+            </div>
+            <div class="button-container">
+                <a href="https://www.amazon.in/FreshToHome-Bengali-Headless-Never-Frozen/dp/B09ZF2S3BR/ref=sr_1_1_f3_wg?almBrandId=ctnow&crid=32Z094RH2H7BL&dib=eyJ2IjoiMSJ9.lT8VIMG8Rs1I_66Z96Sjyy7Z5c-Na_-_Gi_lBx4Yu6-GsiXhX2WhRu4B6RSf3ZgyOWtnj5xaatS8hd-nPmtgm0LjDWj459Epof8m2n0zgAL6PRVLXZLOmp5Xt9XS2sRV_Z1qBd7gjixqS2QV6r0DBrkc7Zy6LZGNiZJmoxJ0U4wpNG4g-0pyhwo9xNvQUjmIUENelB-syppETaxifUU-P3lFVzpE8Mw-_qxjMv9dXoW3yVbm3SYrtCJCI6a-9sLLB8rj7AbFO4o_Qk4jYw-OTR4FNy2xJijzH4sj-UobH-k.nfoK5MPj2rnrx9-i2mIiI0RB7vuTbB5prwBB3A4-VsA&dib_tag=se&fpw=alm&keywords=Fish&qid=1728041084&s=nowstore&sprefix=fish%2Cnowstore%2C217&sr=1-1" target="_blank">Amazon</a>
+                <a href="https://www.bigbasket.com/pd/40119262/fresho-rohu-cut-pieces-medium-1-kg/?nc=cl-prod-list&t_pos_sec=1&t_pos_item=2&t_s=Rohu+Fish+Curry+Cut%252FBengali+Cut" target="_blank">BigBasket</a>
+                <a href="https://blinkit.com/prn/freshtohome-rohu-rui-fish-bengali-cut-without-head/prid/543199" target="_blank">Blinkit</a>
+            </div>
+        </div>
+        <!-- 8 Card -->
+        <div class="recipe-card" data-name="Egg" data-calories="70">
+            <h2>Egg</h2>
+            <img src="IMAGES/Egg.jpeg" alt="Egg">
+            <p><strong>Calories per Serving:</strong> <span class="calories">70</span> kcal</p>
+            <div class="serving-selector">
+                <label for="servings-1">Servings:</label>
+                <select id="servings-1" onchange="updateCalories(8, this)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <p id="total-calories-8">Total Calories: 70 kcal</p>
+            </div>
+            <div class="button-container">
+                <a href="https://www.amazon.in/Fresh-White-Eggs-6-Pcs/dp/B0DG5PG3CX/ref=sr_1_2_f3_wg?almBrandId=ctnow&crid=34PZZDM4CPCWD&dib=eyJ2IjoiMSJ9.FZ4JSn-6mRNfKBxdWkHL9pypmwM9fld3yKYjFVHRDXsR9rEw9vOOJ5eqg1PiWsLq2k2gK-mf93ZeoIi7tQd_bsgbkCF-23ZF9zXhE-QRTcA-yVDFcb6n_WtfI5V95Mt6Pr5Z19q2VzQ7VBLQO2s1SlSGUfITs7u7POpt_YXC4t0PFusVeUyHbleSCNFhUtFmfQunP3k_c6MXbsjRjClp0ih4-ba1JKhrJANOlHrYYfAyZsVrC_uKOt_M4Vq6eHZ5apHEoDSYF6B_XHiANZy-8kA0V0i2eftUEYXzIUFj_Gw.gUif7fkGEPfHkNk0M9rurpBooHaE1bAuVoyHZ2kWYzM&dib_tag=se&fpw=alm&keywords=Egg&qid=1728042921&s=nowstore&sprefix=egg%2Cnowstore%2C209&sr=1-2" target="_blank">Amazon</a>
+                <a href="https://www.bigbasket.com/pd/40003813/best-plus-egg-veg-feed-no-bad-odour-12-pcs-pouch/?nc=cl-prod-list&t_pos_sec=1&t_pos_item=2&t_s=Plus+Eggs" target="_blank">BigBasket</a>
+                <a href="https://blinkit.com/prn/licious-farm-fresh-classic-white-eggs/prid/498143" target="_blank">Blinkit</a>
+            </div>
+        </div>
+        <!-- 9 Card -->
+        <div class="recipe-card" data-name="Mutton" data-calories="280">
+            <h2>Mutton</h2>
+            <img src="IMAGES/Mutton.jpg" alt="Mutton">
+            <p><strong>Calories per Serving:</strong> <span class="calories">280</span> kcal</p>
+            <div class="serving-selector">
+                <label for="servings-1">Servings:</label>
+                <select id="servings-1" onchange="updateCalories(9, this)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <p id="total-calories-9">Total Calories: 280 kcal</p>
+            </div>
+            <div class="button-container">
+                <a href="https://www.amazon.in/Deli-Chic-Mutton-Freshly-Frozen/dp/B0CJTGDF5F/ref=sr_1_1_f3_wg?almBrandId=ctnow&crid=7MY5GI0SMMWA&dib=eyJ2IjoiMSJ9.17RdRT4xuPU0BG-rRzBwsHySp1XFnx7Wj6wSX0whHyjpzkWFo1hmi7XKJxj6A5MajqRnC62H0kQS9GOf5qpchJvSTtEjIN4HXV5476yAvbdXLhtOCHDQG8YwQ_Xz54vpsmNdEXjoj2HHitTgeY_2-RZnXhn7l_no-DvKjofp72uIqJ37yeCwJHtwy4weVghIgR4qmjR9e2tvljW6i86oHohe5ctGrxJ3t3CUwJuUhjTe0uGdHB8J3aSTVJk4aZWkICaFqfqAX1qbvud4KV1TLNSs12ngshL4HvAINKS0Wgc.6BT36SXn9ZICF7RPvFf4OuWKRDiAS0IkRZRk3Iqf-0s&dib_tag=se&fpw=alm&keywords=Mutton&qid=1728043104&s=nowstore&sprefix=mutton%2Cnowstore%2C211&sr=1-1" target="_blank">Amazon</a>
+                <a href="https://www.bigbasket.com/pd/40048913/fresho-mutton-curry-cut-from-whole-carcass-8-10-pcs-antibiotic-residue-free-growth-hormone-free-1-kg/?nc=cl-prod-list&t_pos_sec=1&t_pos_item=1&t_s=Mutton+Curry+Cut+-+From+Whole+Carcass+24-32+pcs" target="_blank">BigBasket</a>
+                <a href="https://blinkit.com/prn/delichic-mutton-curry-cut/prid/538869" target="_blank">Blinkit</a>
+            </div>
+        </div>
+        <!-- 10 Card -->
+        <div class="recipe-card" data-name="Prawns" data-calories="112">
+            <h2>Prawns</h2>
+            <img src="IMAGES/Prawns.jpg" alt="Prawns">
+            <p><strong>Calories per Serving:</strong> <span class="calories">112</span> kcal</p>
+            <div class="serving-selector">
+                <label for="servings-1">Servings:</label>
+                <select id="servings-1" onchange="updateCalories(10, this)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <p id="total-calories-10">Total Calories: 112 kcal</p>
+            </div>
+            <div class="button-container">
+                <a href="https://www.amazon.in/Mega-Frozen-Prawns-Peeled-Deveined/dp/B09X7FML3B/ref=sr_1_1_f3_wg?almBrandId=ctnow&crid=2MGC0LGY9VMRH&dib=eyJ2IjoiMSJ9.ZvESpDSwZLr8mNCvuyKXZu37z6NkKsSevpIaHQGWDkc5jzQEAfAm6E7bt5muqpJrfxUMzTHruluyAE8tuSkSiEL4NvAmc-djnbTsgQWdjel-oZPafn0t0TmPGDvhR5y646JFCY7E5JXpZt9dzsnwnY2B-ecNeDEVQxDGFwAZEeDVlQ-n_vDy2U-tbLJ68Xo71cQ7nPHwLipfvFy930diw-CWNM_XgVU-6uKYoZ7oU_TcCDhcxzSGGKxv3otHod7tdAMLXSsnp2msQhk6b1wenQRP8EIe1rIGo7MavAjBPOo.Hdjhv-XJYGqKAOumFpfhCfZVvVAImfv4VDM9rTClVxU&dib_tag=se&fpw=alm&keywords=Prawns&qid=1728043277&s=nowstore&sprefix=prawns%2Cnowstore%2C198&sr=1-1" target="_blank">Amazon</a>
+                <a href="https://www.bigbasket.com/pd/40004054/ifb-fresh-catch-prawns-medium-200-g-pouch/?nc=cl-prod-list&t_pos_sec=1&t_pos_item=1&t_s=Fresh+Catch+Prawns+-+Medium" target="_blank">BigBasket</a>
+                <a href="https://blinkit.com/prn/itc-master-chef-medium-prawns-peeled-deveined-frozen/prid/452658" target="_blank">Blinkit</a>
+            </div>
+        </div>
+        <!-- 11 Card -->
+        <div class="recipe-card" data-name="Buffalo Milk" data-calories="150">
+            <h2>Buffalo Milk</h2>
+            <img src="IMAGES/Buffalo-milk.jpg" alt="Buffalo Milk">
+            <p><strong>Calories per Serving:</strong> <span class="calories">150</span> kcal</p>
+            <div class="serving-selector">
+                <label for="servings-1">Servings:</label>
+                <select id="servings-1" onchange="updateCalories(11, this)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <p id="total-calories-11">Total Calories: 150 kcal</p>
+            </div>
+            <div class="button-container">
+                <a href="https://www.amazon.in/Amul-Homogenised-Toned-500ml-Pouch/dp/B0752ZYSPS/ref=sr_1_1_f3_wg?almBrandId=ctnow&crid=3051IA7QWEOGS&dib=eyJ2IjoiMSJ9.dNO7SZGzh1ElHg1E-Hx2FH2EGKxG0_lewwZXoAnJ6gbzuLYdCHEZ_IYynJ_9IwkewhpgrQLCW2bj155XdVu085my-WzyqyjMnxvA-I7uO0WHDrsr4keHOHYTGlgLHsNL0rJZ57hGW9bdDf2UrJER31x6kzgFmcMQEsYnWGKW-gH6SeD7OLjQhvn8CORSiIoxWvTIjJLMa5ImoBEA4dkeCH5RrbU8e8gEIBF1ME1bJSsw8Ear3_2ioW2E4LQuLpWbBgvUqXzCdzDeZWRv5Cn_wjS2rjeab6vFAQSw3nwBz8Y.LX-JDsfb7vrsPqcnM_RLET6DBmujNWF_n8ha_yyA858&dib_tag=se&fpw=alm&keywords=Buffalo+Milk&nsdOptOutParam=true&qid=1728043453&s=nowstore&sprefix=buffalo+milk%2Cnowstore%2C191&sr=1-1" target="_blank">Amazon</a>
+                <a href="https://www.bigbasket.com/pd/40248005/amul-buffalo-milk-uht-treated-calcium-rich-no-preservatives-1-l-tetra-pack/?nc=cl-prod-list&t_pos_sec=1&t_pos_item=1&t_s=Buffalo+Milk+-+UHT+Treated%252C+Calcium+Rich%252C+No+Preservatives" target="_blank">BigBasket</a>
+                <a href="https://blinkit.com/prn/amul-a2-buffalo-fresh-milk/prid/522807" target="_blank">Blinkit</a>
+            </div>
+        </div>
+        <!-- 12 Card -->
+        <div class="recipe-card" data-name="Carrot" data-calories="41">
+            <h2>Carrot</h2>
+            <img src="IMAGES/Carrot.jpeg" alt="Carrot">
+            <p><strong>Calories per Serving:</strong> <span class="calories">41</span> kcal</p>
+            <div class="serving-selector">
+                <label for="servings-1">Servings:</label>
+                <select id="servings-1" onchange="updateCalories(12, this)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <p id="total-calories-12">Total Calories: 41 kcal</p>
+            </div>
+            <div class="button-container">
+                <a href="https://www.amazon.in/Fresh-Baby-Carrot-Ooty-Pack/dp/B0C2H1KGYY/ref=sr_1_2_f3_wg?almBrandId=ctnow&crid=1CRQSYVZ4X7GQ&dib=eyJ2IjoiMSJ9.gHZbGSMLPOkiZwdtC8aElZN_boJlGArot2-WruugYdhSBdUmRTh8pk4tFHpx6ZB6aORzGAXZEQuIPm_4MH0lVTdPJO21Mk2qYQUXsMhoZ5Mh4LPrWwQ5ppA_rX6mJQBAlUgdPWwsmfybYyizEwT4e6MNrAtnG4RL77OUc3whrOudx6GhXDV_wnaiLLHYw0W0pGHkTD4SUiGtGcgCT98_llfl81VKRbZovlwDBQV8aA_oaAHTivPi6zizRTuH50upw7tUwu6cJR_bsdjWVQ-cRzGtfXiIGgE6JnFMK_kc7mQ.nN6XXZbiEbR5vv2kOR-Ii1I3G6daWN6DaWgMUAQBgEY&dib_tag=se&fpw=alm&keywords=Carrot&qid=1728043656&s=nowstore&sprefix=carrot%2Cnowstore%2C184&sr=1-2" target="_blank">Amazon</a>
+                <a href="https://www.bigbasket.com/pd/10000070/fresho-carrot-orange-1-kg/?nc=cl-prod-list&t_pos_sec=1&t_pos_item=1&t_s=Carrot+-+Orange+%2528Loose%2529" target="_blank">BigBasket</a>
+                <a href="https://blinkit.com/prn/orange-carrot-gajar/prid/3913" target="_blank">Blinkit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+  <section id="footer" class="gradient-background">
+    <div class="container mt-5">
+      <footer class="py-1 pt-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>General</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Cookie Policy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Legal</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Legal</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terms</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Social</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Intellectual Property</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Properties</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Destinations</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Press Room</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Promo Code</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Tech Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of what's new and exciting from us.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden">Email address</label>
+                <input id="newsletter1" type="email" class="form-control" placeholder="Email address" required>
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>© 2024 Aarogya, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#">GitHub</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Twitter</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Facebook</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+    <script>
+        function filterRecipes() {
+            const searchInput = document.getElementById('search').value.toLowerCase();
+            const recipes = document.querySelectorAll('.recipe-card');
+            recipes.forEach(recipe => {
+                const recipeName = recipe.getAttribute('data-name').toLowerCase();
+                if (recipeName.includes(searchInput)) {
+                    recipe.style.display = 'block';
+                } else {
+                    recipe.style.display = 'none';
+                }
+            });
+        }
+
+        function updateCalories(cardIndex, selectElement) {
+            const caloriesPerServing = document.querySelector(`.recipe-card:nth-child(${cardIndex})`).getAttribute('data-calories');
+            const servings = selectElement.value;
+            const totalCalories = caloriesPerServing * servings;
+            document.getElementById(`total-calories-${cardIndex}`).innerText = `Total Calories: ${totalCalories} kcal`;
+        }
+
+        // Initial call to display all cards
+        filterRecipes();
+    </script>
+</body>
+</html>
+

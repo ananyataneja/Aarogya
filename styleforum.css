@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+main {
+  padding: 20px;
+}
+
+#forum {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post, .new-post {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post h3, .new-post h3 {
+  margin-top: 0;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.post-actions {
+  margin-top: 10px;
+}
+
+.like-btn, .comment-btn {
+  cursor: pointer;
+  margin-right: 10px;
+  color: #3498db;
+}
+
+.like-btn:hover, .comment-btn:hover {
+  text-decoration: underline;
+}
+
+.comments-section {
+  margin-top: 15px;
+}
+
+.comments-container {
+  margin-top: 10px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 10px;
+}
+
+.comment {
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
