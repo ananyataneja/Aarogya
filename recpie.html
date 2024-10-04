@@ -30,6 +30,54 @@
   .test{
     font-weight: 500;
   }
+   /* Add custom styling for the navbar */
+ .navbar {
+      border-radius: 50px; /* Oval shape */
+      padding: 15px 40px; /* Adjust padding for better appearance */
+      background-color: #f8f8f8; /* Background color */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+      position: fixed; /* Make the navbar floating */
+      top: 20px; /* Distance from the top */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%); /* Center alignment */
+      width: 80%; /* Adjust width to 80% of the screen */
+      max-width: 1200px; /* Maximum width for the navbar */
+      z-index: 1000; /* Ensure navbar is above other elements */
+    }
+
+    /* Title styling */
+    .navbar-brand {
+      font-weight: bold; /* Bold font for the title */
+      font-size: 1.8rem; /* Increase font size */
+      color: darkgreen; /* Dark green color */
+      font-family: 'Arial', sans-serif; /* Change font family */
+    }
+
+    /* Centering the navbar items */
+    .navbar-nav {
+      flex-direction: row; /* Horizontal alignment */
+      justify-content: flex-end; /* Align items to the right */
+      width: 100%; /* Full width to distribute space */
+    }
+
+    /* Style for navbar items */
+    .navbar-nav .nav-item .nav-link {
+      color: green; /* Green color for menu items */
+      font-weight: bold; /* Bold font for menu items */
+      margin-left: 30px; /* Space between menu items */
+    }
+
+    /* Ensure the login button is right-aligned */
+    .d-flex {
+      margin-left: auto; /* Pushes login button to the right */
+    }
+
+    /* Style for the login button */
+    .btn-login {
+      font-weight: bold; /* Make login button bold */
+      margin-left: 30px; /* Add space between FAQs and Login button */
+      white-space: nowrap; /* Prevent text from wrapping */
+    }
     </style>
 </head>
 <body>

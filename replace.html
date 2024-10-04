@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cravings Replacement</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+    
+    <style>
+        
+            body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-image: url('background.jpg'); /* Add your background image here */
+        background-size: cover; /* Ensures the background covers the entire area */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+            }
+
+        header {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+
+        }
+        h1 {
+            color: whitesmoke;
+            margin: 0;
+            font-size:2.5rem;
+
+        }
+        
+        .search-container {
+            text-align: right;
+        }
+        .search-bar {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 30px;
+            outline: none;
+        }
+        .heading-container {
+            display: flex ;
+            justify-content: space-evenly;
+            margin-bottom: 20px;
+        }
+        .heading-section {
+            text-align: center;
+        }
+        .heading-section img {
+            max-width: 120px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .heading-section h2 {
+            font-size: 20px;
+            color: whitesmoke;
+            background-color: black;
+            
+        }
+        .cravings-wrapper {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .cravings-column {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column for each side */
+            gap: 20px;
+        }
+        .craving-box {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .craving-box img {
+            max-width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .craving-box h3 {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+        .craving-box p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .video-link {
+            margin-top: 10px;
+            display: block;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 14px;
+        }
+        .video-link:hover {
+            text-decoration: underline;
+        }
+         /* Existing Styles */
+    #footer {
+      width: 100%;
+    }
+
+    footer {
+      padding: 20px; /* Adjust the padding value as needed */
+    }
+    .gradient-background {
+    background: linear-gradient(300deg,#ffffff,#ccdbd0);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+  }
+  
+  .module{
+    background-image: url("./images/Module\ adventures.jpg");
+  }
+  .test{
+    font-weight: 500;
+  }
+   /* Add custom styling for the navbar */
+ .navbar {
+      border-radius: 50px; /* Oval shape */
+      padding: 15px 40px; /* Adjust padding for better appearance */
+      background-color: #f8f8f8; /* Background color */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+      position: fixed; /* Make the navbar floating */
+      top: 20px; /* Distance from the top */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%); /* Center alignment */
+      width: 80%; /* Adjust width to 80% of the screen */
+      max-width: 1200px; /* Maximum width for the navbar */
+      z-index: 1000; /* Ensure navbar is above other elements */
+    }
+
+    /* Title styling */
+    .navbar-brand {
+      font-weight: bold; /* Bold font for the title */
+      font-size: 1.8rem; /* Increase font size */
+      color: darkgreen; /* Dark green color */
+      font-family: 'Arial', sans-serif; /* Change font family */
+    }
+
+    /* Centering the navbar items */
+    .navbar-nav {
+      flex-direction: row; /* Horizontal alignment */
+      justify-content: flex-end; /* Align items to the right */
+      width: 100%; /* Full width to distribute space */
+    }
+
+    /* Style for navbar items */
+    .navbar-nav .nav-item .nav-link {
+      color: green; /* Green color for menu items */
+      font-weight: bold; /* Bold font for menu items */
+      margin-left: 30px; /* Space between menu items */
+    }
+
+    /* Ensure the login button is right-aligned */
+    .d-flex {
+      margin-left: auto; /* Pushes login button to the right */
+    }
+
+    /* Style for the login button */
+    .btn-login {
+      font-weight: bold; /* Make login button bold */
+      margin-left: 30px; /* Add space between FAQs and Login button */
+      white-space: nowrap; /* Prevent text from wrapping */
+    }
+    </style>
+</head>
+<body>
+    <section>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5 gradient-background">
+          <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+              <img src="./logo-removebg-preview (1).png" alt="Aarogya Logo" width="60" height="60">
+              Aaro<span style="color:#00C853;">gya</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+              aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <!-- Merged Navigation Items from the Second Navbar -->
+    
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+    
+                <!-- Fitness Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Fitness
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="lev1.html">Home Workout</a></li>
+                    <li><a class="dropdown-item" href="#">Gym Workout</a></li>
+                    <li><a class="dropdown-item" href="#">Yoga</a></li>
+                  </ul>
+                </li>
+    
+                <!-- Membership (Replaced "Personalised Progress") -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Membership</a>
+                </li>
+    
+                <!-- Nutrition Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Nutrition
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="lev1.html">Healthy Recipes</a></li>
+                    <li><a class="dropdown-item" href="#">Craving Replacements</a></li>
+                    <li><a class="dropdown-item" href="#">Calorie Counter</a></li>
+                  </ul>
+                </li>
+    
+                <!-- Track Progress Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Track Progress
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="lev1.html">Fitness Progress</a></li>
+                    <li><a class="dropdown-item" href="#">Mental Progress</a></li>
+                    <li><a class="dropdown-item" href="#">Nutritional Progress</a></li>
+                  </ul>
+                </li>
+    
+                <!-- Community -->
+                <li class="nav-item">
+                  <a class="nav-link" href="chatbot.html">Community</a>
+                </li>
+              </ul>
+              <!-- Removed the Login Button -->
+              <!--
+              <form class="d-flex" role="search">
+                <button class="btn btn-outline-success btn-login" type="submit">Login</button>
+              </form>
+              -->
+            </div>
+          </div>
+        </nav>
+      </section>
+    
+      <div class="container my-5 mt-5 pt-5 ">
+        <!-- Content goes here -->
+      </div>
+    
+      <div class="container marketing">
+
+<header>
+    <h1>Cravings Replacement</h1>
+    <div class="search-container">
+        <input type="text" id="search" class="search-bar" placeholder="Search for food items...">
+    </div>
+</header>
+
+<!-- Image and Heading Section -->
+<div class="heading-container">
+    <div class="heading-section">
+        <img src="CRAVEIMAGES/unhealthy.jpg" alt="Unhealthy Food Image">
+        <h2>INSTEAD OF</h2>
+    </div>
+    <div class="heading-section">
+        <img src="CRAVEIMAGES/healthy.jpg" alt="Healthy Food Image">
+        <h2>EAT THIS</h2>
+    </div>
+</div>
+
+<!-- Cravings Columns (Unhealthy on left, Healthy on right) -->
+<div class="cravings-wrapper">
+    <!-- Unhealthy Foods (Left Column) -->
+    <div class="cravings-column">
+        <div class="craving-box" data-name="Chocolate Bar">
+            <img src="CRAVEIMAGES/Chocolate Bar.jpeg" alt="Food Image">
+            <h3>Name: Chocolate Bar</h3>
+            <p>Calories: 450 kcal</p>
+        </div>
+        <div class="craving-box" data-name="Milkshake">
+            <img src="CRAVEIMAGES/milkshake.jpg" alt="Food Image">
+            <h3>Name: Milkshake</h3>
+            <p>Calories: 500 kcal</p>
+        </div>
+        <div class="craving-box" data-name="Donut">
+            <img src="CRAVEIMAGES/Donut.jpg" alt="Food Image">
+            <h3>Name: Donut</h3>
+            <p>Calories: 300 kcal</p>
+        </div>
+    </div>
+
+    <!-- Healthy Foods (Right Column) -->
+    <div class="cravings-column">
+        <div class="craving-box" data-name="Dark Chocolate">
+            <img src="CRAVEIMAGES/Dark Chocolate.jpeg" alt="Food Image">
+            <h3>Name: Dark Chocolate</h3>
+            <p>Calories: 250 kcal</p>
+            <a href="https://youtu.be/c9wyO5Keix8?si=KSD45BGAFqtSf896" target="_blank" class="video-link">Watch Recipe Video</a>
+        </div>
+        <div class="craving-box" data-name="Smoothie Bowl">
+            <img src="CRAVEIMAGES/Smoothie Bowl.jpg" alt="Food Image">
+            <h3>Name: Smoothie Bowl</h3>
+            <p>Calories: 200 kcal</p>
+            <a href="https://youtu.be/94AV_epDjb4?si=xzPVa7BJE2XJ8rsw" target="_blank"   class="video-link">Watch Recipe Video</a>
+        </div>
+        <div class="craving-box" data-name="Fruit Salad">
+            <img src="CRAVEIMAGES/fruit-salad.jpeg" alt="Food Image">
+            <h3>Name: Fruit Salad</h3>
+            <p>Calories: 150 kcal</p>
+            <a href="https://youtu.be/nTm-_KujooY?si=WIpUodO03PZC3JOI" target="_blank" class="video-link">Watch Recipe Video</a>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<section id="footer" class="gradient-background">
+    <div class="container mt-5">
+      <footer class="py-1 pt-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>General</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Cookie Policy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Legal</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Legal</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terms</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Social</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Intellectual Property</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Properties</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Destinations</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Press Room</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Promo Code</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Tech Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of what's new and exciting from us.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden">Email address</label>
+                <input id="newsletter1" type="email" class="form-control" placeholder="Email address" required>
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>© 2024 Aarogya, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#">GitHub</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Twitter</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Facebook</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </section>
+<script>
+    // Search functionality
+    document.getElementById('search').addEventListener('input', function() {
+        let filter = this.value.toLowerCase();
+        let cravingBoxes = document.querySelectorAll('.craving-box');
+
+        cravingBoxes.forEach(function(box) {
+            let itemName = box.getAttribute('data-name').toLowerCase();
+            if (itemName.includes(filter)) {
+                box.style.display = "block"; // Show card
+            } else {
+                box.style.display = "none"; // Hide card
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
+
+
