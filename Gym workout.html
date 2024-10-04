@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Workout</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+
+            padding: 20px;
+            background-image: url('image\ bg1.jpg'); /* Replace with your image file name */
+            background-size: cover;
+            background-position: center;
+            color : #f5f5f5; /* Adjust text color for better readability */
+        
+            padding:  50px 20px;
+            background-color:   #f5f5f5;
+        }
+        .exercise-card {
+            margin-bottom:   #d3d3d3;
+        }
+        .exercise-video {
+            display: none;
+            margin-top: 20px;
+        }
+        .show-video {
+            cursor: pointer;
+            color: #007bff;
+            text-decoration: underline;
+
+        }
+        .gradient-background {
+            background: linear-gradient(300deg,#ffffff,#ccdbd0);
+            background-size: 180% 180%;
+            animation: gradient-animation 18s ease infinite;
+          }
+          
+          .module{
+            background-image: url("./images/Module\ adventures.jpg");
+          }
+          .test{
+            font-weight: 500;
+          }
+        
+            
+    
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center mb-4">Gym Workout </h1>
+        
+        <div class="row">
+            <!-- Shoulders Section -->
+            <h2 class="mb-3"><center>Shoulders</center></h2>
+            <div class="col-md-4 exercise-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><center><span style="color: red;">Shoulder Press</span></center></h5>
+                        <div class="text-center">
+                        <img src="shoulder press.webp" alt="Shoulder Press" width="250" height="215"></div>
+                        <p class="card-text">Equipment: Dumbbells or Barbell</p>
+                        <p class="card-text">Focuses on the deltoid muscles.</p>
+                        <p class="show-video" onclick="toggleVideo('video1')">Watch Video</p>
+                        <div class="exercise-video" id="video1">
+                            <iframe width="370" height="250" src="https://www.youtube-nocookie.com/embed/mIdWg2z4-mQ?si=UAHTRvQR_jEVoAyq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 exercise-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><center><span style="color: red;">Lateral Raise</span></center></h5>
+                        <div class="text-center">
+                            <img src="Dumbbell_Lateral_Raise.webp" alt="Shoulder Press" width="250" height="215"></div>
+                        <p class="card-text">Equipment: Dumbbells</p>
+                        <p class="card-text">Targets the side deltoids for shoulder width.</p>
+                        <p class="show-video" onclick="toggleVideo('video2')">Watch Video</p>
+                        <div class="exercise-video" id="video2">
+                            <iframe width="370" height="250" src="https://www.youtube-nocookie.com/embed/PzsMitRdI_8?si=2f2an4F5sgGSW_Mu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 exercise-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><center><span style="color: red;">Arnold Press</span></center></h5>
+                        <div class="text-center">
+                            <img src="best-shoulder-exercises-arnold-press.jpg" alt="Shoulder Press" width="250" height="215"></div>
+                        <p class="card-text">Equipment: Dumbbells</p>
+                        <p class="card-text">Hits all heads of the deltoids.</p>
+                        <p class="show-video" onclick="toggleVideo('video3')">Watch Video</p>
+                        <div class="exercise-video" id="video3">
+                            <iframe width="370" height="250" src="https://www.youtube-nocookie.com/embed/pQDrcNoDNVM?si=CuH3yzcRwQ6YL-8P&amp;start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <!-- Back Section -->
+            <h2 class="mb-3"><center>Back</center></h2>
+            <div class="col-md-4 exercise-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><center><span style="color: red;">Lat Pulldown</span></center></h5>
+                        <div class="text-center">
+                        <img src="maxresdefault.jpg" alt="images (1).jpeg" width="250" height="215"></div>
+                        <p class="card-text">Equipment: Lat Pulldown Machine</p>
+                        <p class="card-text">Engages the latissimus dorsi.</p>
+                        <p class="show-video" onclick="toggleVideo('video4')">Watch Video</p>
+                        <div class="exercise-video" id="video4">
+                            <iframe width="370" height="250" src="https://www.youtube-nocookie.com/embed/JGeRYIZdojU?si=gP8GzhARsNl6lee8&amp;start=4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 exercise-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><center><span style="color: red;">Deadlift</span></center></h5>
+                        <div class="text-center">
+                        <img src="deadlift-72-1553273826.png" alt="images (1).jpeg" width="250" height="215"></div>
+                        <p class="card-text">Equipment: Barbell</p>
+                        <p class="card-text">Strengthens the entire back, glutes, and hamstrings.</p>
+                        <p class="show-video" onclick="toggleVideo('video5')">Watch Video</p>
+                        <div class="exercise-video" id="video5">
+                            <iframe width="370" height="250" src="https://www.youtube-nocookie.com/embed/AweC3UaM14o?si=F2obVv6Lr4tekpEI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 exercise-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><center><span style="color: red;">Seated Cable Row</span></center></h5>
+                        <div class="text-center">
+                        <img src="v4-460px-Do-a-Seated-Cable-Row-Step-8-Version-3.jpg.jpeg" alt="images (1).jpeg" width="185" height="185"></div>
+                        <p class="card-text">Equipment: Cable Machine</p>
+                        <p class="card-text">Targets the mid-back muscles like rhomboids and traps.</p>
+                        <p class="show-video" onclick="toggleVideo('video6')">Watch Video</p>
+                        <div class="exercise-video" id="video6">
+                            <iframe width="370" height="250" src="https://www.youtube-nocookie.com/embed/TeFo51Q_Nsc?si=KCFduE2qb5dO8D9F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <!-- Legs Section -->
+            <h2 class="mb-3"><center>Legs</center></h2>
+            <div class="col-md-4 exercise-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><center><span style="color: red;">Squats</span></center></h5>
+                        <div class="text-center">
+                        <img src="leg press.jpeg" alt="images (1).jpeg" width="210" height="210"></div>
+                        <p class="card-text">Equipment: Barbell</p>
+                        <p class="card-text">Works the quadriceps, hamstrings, glutes, and lower back.</p>
+                        <p class="show-video" onclick="toggleVideo('video7')">Watch Video</p>
+                        <div class="exercise-video" id="video7">
+                           
+                            <iframe width="370" height="250" src="https://www.youtube-nocookie.com/embed/xqvCmoLULNY?si=dDlTUavvdkF_Qikp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 exercise-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><center><span style="color: red;">Leg Press</span></center></h5>
+                        <div class="text-center">
+                            <img src="leg press.jpeg" alt="Shoulder Press" width="260" height="230"></div>
+                        <p class="card-text">Equipment: Leg Press Machine</p>
+                        <p class="card-text">Isolates the quads and glutes.</p>
+                        <p class="show-video" onclick="toggleVideo('video8')">Watch Video</p>
+                        <div class="exercise-video" id="video8">
+                            <iframe width="370" height="250" src="https://www.youtube-nocookie.com/embed/xq2-vebNe6I?si=-jNhHHyJbxQQbGH1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 exercise-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><center><span style="color: red;">Lunges</span></center></h5>
+                        <div class="text-center">
+                            <img src="lunges-exercise-illustration.jpg" alt="Shoulder Press" width="260" height="230"></div>
+                        <p class="card-text">Equipment: Dumbbells or Barbell</p>
+                        <p class="card-text">Strengthens the quads, glutes, and hamstrings.</p>
+                        <p class="show-video" onclick="toggleVideo('video9')">Watch Video</p>
+                        <div class="exercise-video" id="video9">
+                            <iframe width="370" height="250" src="https://www.youtube-nocookie.com/embed/MxfTNXSFiYI?si=8SRTb1FwJkgCGUls&amp;start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap and JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleVideo(videoId) {
+            const video = document.getElementById(videoId);
+            if (video.style.display === "block") {
+                video.style.display = "none";
+            } else {
+                video.style.display = "block";
+            }
+        }
+    </script>
+     <!-- Footer -->
+  <section id="footer" class="gradient-background">
+    <div class="container mt-5">
+      <footer class="py-1 pt-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>General</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Cookie Policy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Legal</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Legal</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terms</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Social</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Intellectual Property</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Properties</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Destinations</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Press Room</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Promo Code</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Tech Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of what's new and exciting from us.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden">Email address</label>
+                <input id="newsletter1" type="email" class="form-control" placeholder="Email address" required>
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>© 2024 Aarogya, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#">GitHub</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Twitter</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Facebook</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </section>
+</body>
+</html>

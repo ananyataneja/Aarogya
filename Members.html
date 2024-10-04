@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Membership and Diet Plan</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        .comparison-container {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .comparison-box {
+            width: 48%;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .comparison-box h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .comparison-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .comparison-box ul li {
+            margin: 15px 0;
+            font-size: 16px;
+        }
+        .checkmark {
+            color: #28a745;
+            margin-right: 10px;
+        }
+        .cross {
+            color: #dc3545;
+            margin-right: 10px;
+        }
+        h1 {
+            margin-bottom: 30px;
+            color: #343a40;
+        }
+        h2 {
+            margin-top: 20px;
+            color: #007bff;
+        }
+        .table {
+            background-color: #ffffff;
+        }
+        .table th {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+        .connect-text {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+        .image-link img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+        .image-link:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <b></b><h1 class="text-center mb-5">Membership Comparison</h1></b>
+
+        <div class="comparison-container">
+            <!-- Without Membership -->
+            <div class="comparison-box">
+                <h2>Without Membership</h2>
+                <ul>
+                    <li><span class="cross">✖</span>Personalized Trainer: Not available</li>
+                    <li><span class="cross">✖</span>24/7 Access: Limited (specific hours)</li>
+                    <li><span class="cross">✖</span>Personalized Diet Chart: General guidelines only</li>
+                    <li><span class="cross">✖</span>Connect Premium: Not available</li>
+                    <li><span class="cross">✖</span>Progress Tracking: Basic tracking</li>
+                    <li><span class="cross">✖</span>Community Support: Limited</li>
+                    <li><span class="cross">✖</span>Workshops and Events: Not included</li>
+                    <li><span class="cross">✖</span>Discounts on Services: Not available</li>
+                </ul>
+            </div>
+
+            <!-- With Membership -->
+            <div class="comparison-box">
+                <h2>With Membership</h2>
+                <ul>
+                    <li><span class="checkmark">✔</span>Personalized Trainer: Available (dedicated support)</li>
+                    <li><span class="checkmark">✔</span>24/7 Access: Full access</li>
+                    <li><span class="checkmark">✔</span>Personalized Diet Chart: Customized to needs</li>
+                    <li><span class="checkmark">✔</span>Connect Premium: Exclusive features and perks</li>
+                    <li><span class="checkmark">✔</span>Progress Tracking: Comprehensive insights</li>
+                    <li><span class="checkmark">✔</span>Community Support: Full access to member network</li>
+                    <li><span class="checkmark">✔</span>Workshops and Events: Exclusive access</li>
+                    <li><span class="checkmark">✔</span>Discounts on Services: Available</li>
+                </ul>
+            </div>
+        </div>
+
+       <b> <h1 class="text-center">Diet Plan Generator</h1></b>
+        <form id="dietForm" class="mb-4">
+            <div class="form-group">
+                <label for="height">Height (cm):</label>
+                <input type="number" class="form-control" id="height" required>
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" class="form-control" id="weight" required>
+            </div>
+            <div class="form-group">
+                <label for="goal">Fitness Goal:</label>
+                <select class="form-control" id="goal" required>
+                    <option value="" disabled selected>Select your goal</option>
+                    <option value="muscleGain">Muscle Gain</option>
+                    <option value="weightLoss">Weight Loss</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Get Diet Plan</button>
+        </form>
+
+        <!-- Modal for Diet Plan -->
+        <div class="modal fade" id="dietModal" tabindex="-1" role="dialog" aria-labelledby="dietModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="dietModalLabel">Your Diet Plan</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="dietPlanContent">
+                        <!-- Diet plan will be inserted here -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <b><h1 class="text-center mt-5">Personalized Training Service</h1></b>
+        <div class="container features">
+            <div class="row">
+                <div class="col-md-4 feature">
+                    <div class="card text-center">
+                        <img width="370" height="250" src="PT1.png" alt="Personalized Training" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Name : Aman Rathi </h5>
+                            <p>Fitness Coach</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 feature">
+                    <div class="card text-center">
+                        <img width="370" height="250" src="PT2.jpg" alt="Personalized Traine" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Name : Karan Gupta</h5>
+                            <p>Gym Coach</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 feature">
+                    <div class="card text-center">
+                        <img width="370" height="250" src="PT3.jpeg" alt="Personalized Trainer" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Name : Rani Verma</h5>
+                            <p>Dietitian</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     <b><h1 class="text-center mt-5">Connect with Like-Minded People</h1></b>
+        <div class="container text-center">
+     
+            <img width="200" height="400" src="people.jpg" alt="Connect with Like-Minded People" class="card-img-top">
+            <!-- Button for Action -->
+            <a href="#" class="btn btn-primary mt-4">Get Started</a>
+        </div>
+
+        <footer class="text-center py-4">
+            <p>&copy; 2024 Personalized Trainer Service. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("dietForm").onsubmit = function(event) {
+            event.preventDefault();
+            let height = document.getElementById("height").value;
+            let weight = document.getElementById("weight").value;
+            let goal = document.getElementById("goal").value;
+            let dietPlan = "Your personalized diet plan based on height: " + height + " cm, weight: " + weight + " kg, and goal: " + goal + ".";
+            document.getElementById("dietPlanContent").innerText = dietPlan;
+            $('#dietModal').modal('show');
+        };
+    </script>
+     <!-- Footer -->
+  <section id="footer" class="gradient-background">
+    <div class="container mt-5">
+      <footer class="py-1 pt-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>General</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Cookie Policy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Legal</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Legal</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terms</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Social</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Intellectual Property</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Properties</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Destinations</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Press Room</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Promo Code</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Tech Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of what's new and exciting from us.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden">Email address</label>
+                <input id="newsletter1" type="email" class="form-control" placeholder="Email address" required>
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>© 2024 Aarogya, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#">GitHub</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Twitter</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Facebook</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </section>
+</body>
+</html>
+

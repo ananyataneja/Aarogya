@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga and Meditation Guide</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+      <!-- Bootstrap CSS -->
+
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+      <style>
+          body {
+  
+              padding: 20px;
+              background-image: url('yoga .123456.jpg'); /* Replace with your image file name */
+              background-size: cover;
+              background-position: center;
+              color : #f5f5f5; /* Adjust text color for better readability */
+          
+              padding:  50px 20px;
+              background-color:   green;
+          }
+          .exercise-card {
+              margin-bottom:   #d3d3d3;
+          }
+          .exercise-video {
+              display: none;
+              margin-top: 20px;
+          }
+          .show-video {
+              cursor: pointer;
+              color: #007bff;
+              text-decoration: underline;
+  
+              
+              
+           
+                  /* Add custom styling for the navbar */
+                  .navbar {
+                    border-radius: 50px; /* Oval shape */
+                    padding: 15px 40px; /* Adjust padding for better appearance */
+                    background-color: #f8f8f8; /* Background color */
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+                    position: fixed; /* Make the navbar floating */
+                    top: 20px; /* Distance from the top */
+                    left: 50%; /* Center horizontally */
+                    transform: translateX(-50%); /* Center alignment */
+                    width: 80%; /* Adjust width to 80% of the screen */
+                    max-width: 1200px; /* Maximum width for the navbar */
+                    z-index: 1000; /* Ensure navbar is above other elements */
+                  }
+              
+                  /* Title styling */
+                  .navbar-brand {
+                    font-weight: bold; /* Bold font for the title */
+                    font-size: 1.8rem; /* Increase font size */
+                    color: darkgreen; /* Dark green color */
+                    font-family: 'Arial', sans-serif; /* Change font family */
+                    display: flex;
+                    align-items: center;
+                    padding-left: 0;
+                    margin-left: 0;
+                  }
+              
+                  .navbar-brand img {
+                    max-height: 50px; /* Adjust for a balanced height */
+                    height: 50px; /* Ensure the logo fits within the navbar without making it too tall */
+                    margin-right: 10px;
+                  }
+              
+                  /* Centering the navbar items */
+                  .navbar-nav {
+                    flex-direction: row; /* Horizontal alignment */
+                    justify-content: flex-end; /* Align items to the right */
+                    width: 100%; /* Full width to distribute space */
+                  }
+              
+                  /* Style for navbar items */
+                  .navbar-nav .nav-item .nav-link {
+                    color: green; /* Green color for menu items */
+                    font-weight: bold; /* Bold font for menu items */
+                    margin-left: 20px; /* Space between menu items */
+                  }
+              
+                  /* Dropdown menu styling */
+                  .dropdown-menu {
+                    border-radius: 10px;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                  }
+              
+                  /* Style for the login button (Removed in this update)
+                  .btn-login {
+                    font-weight: bold; /* Make login button bold */
+                    margin-left: 30px; /* Add space between menu items and Login button */
+                    white-space: nowrap; /* Prevent text from wrapping */
+                  }
+              </style>
+       
+              
+              
+                
+                
+                <section>
+                  <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5 gradient-background">
+                    <div class="container-fluid">
+                      <a class="navbar-brand d-flex align-items-center" href="#">
+                        <img src="./logo-removebg-preview (1).png" alt="Aarogya Logo" width="60" height="60">
+                        Aaro<span style="color:#00C853;">gya</span>
+                      </a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarScroll">
+                        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                          <!-- Merged Navigation Items from the Second Navbar -->
+              
+                          <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                          </li>
+              
+                          <!-- Fitness Dropdown -->
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                              aria-expanded="false">
+                              Fitness
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="lev1.html">Home Workout</a></li>
+                              <li><a class="dropdown-item" href="#">Gym Workout</a></li>
+                              <li><a class="dropdown-item" href="#">Yoga</a></li>
+                            </ul>
+                          </li>
+              
+                          <!-- Membership (Replaced "Personalised Progress") -->
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Membership</a>
+                          </li>
+              
+                          <!-- Nutrition Dropdown -->
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                              aria-expanded="false">
+                              Nutrition
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="lev1.html">Healthy Recipes</a></li>
+                              <li><a class="dropdown-item" href="#">Craving Replacements</a></li>
+                              <li><a class="dropdown-item" href="#">Calorie Counter</a></li>
+                            </ul>
+                          </li>
+              
+                          <!-- Track Progress Dropdown -->
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                              aria-expanded="false">
+                              Track Progress
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="lev1.html">Fitness Progress</a></li>
+                              <li><a class="dropdown-item" href="#">Mental Progress</a></li>
+                              <li><a class="dropdown-item" href="#">Nutritional Progress</a></li>
+                            </ul>
+                          </li>
+              
+                          <!-- Community -->
+                          <li class="nav-item">
+                            <a class="nav-link" href="chatbot.html">Community</a>
+                          </li>
+                        </ul>
+                        <!-- Removed the Login Button -->
+                        <!--
+                        <form class="d-flex" role="search">
+                          <button class="btn btn-outline-success btn-login" type="submit">Login</button>
+                        </form>
+                        -->
+                      </div>
+                    </div>
+                  </nav>
+                </section>
+              
+                <div class="container my-5 mt-5 pt-5 ">
+                  <!-- Content goes here -->
+                </div>
+              
+                    
+                  
+          
+    <div class="container my-5">
+    <h1><h1 class="text-center"><b><span style="color:whitesmoke">Yoga and Meditation</span></b> </h1></h1>
+
+        <br>
+<div>
+    <section id="YOGA POSES" class="mb-5">
+        <header style="background-color: whitesmoke; padding: 20px; text-align: center; margin-bottom: 20px;">
+            <h1 class="text-center" style="margin: 0; font-size: 2.5rem;">
+                <b><span style="color:black;">YOGA POSES</span></b><br>
+            </h1>
+        </header> <!-- Added margin-bottom to create space between header and carousel -->
+    </section>
+</div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body" >
+                        <h5 class="card-title"><center><span style="color: red;">Downward-Facing Dog</span></center></h5>
+                        <div class="text-center">
+                        <img src="yoga 1.png" alt="DOWNWARD-FACING DOG" width="300" height="300"></div>
+                        <p><strong>Procedure:</strong></p>
+                        <ul>
+                            <li>Start on your hands and knees.</li>
+                            <li>Lift your hips up and back.</li>
+                            <li>Press your heels toward the floor.</li>
+                        </ul>
+                        <p><strong>Benefits:</strong></p>
+                        <ul>
+                            <li>Strengthens arms and legs.</li>
+                            <li>Improves blood circulation.</li>
+                            <li>Relieves tension.</li>  
+                            <div class="text-left mt-2">
+                                <a href="https://youtu.be/j97SSGsnCAQ?si=JqLENQ17I3nXsx4U" target="_blank">Watch Video</a>
+                            </div>
+                            <div class="exercise-video" id="video2">
+                                <iframe width="370" height="250" src="https://www.youtube-nocookie.com/embed/j97SSGsnCAQ?si=q127cnyK0aETlNRZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><center><span style="color: red;">Warrior II</span></center></h5>
+                        <div class="text-center">
+                            <img src="Yoga-How-to-Do-Warrior-2.jpg" alt="WARRIOR 2" width="300" height="300"></div>
+                        <p><strong>Procedure:</strong></p>
+                        <ul>
+                            <li>Stand with your feet apart.</li>
+                            <li>Bend your right knee over your right ankle.</li>
+                          
+                        </ul>
+                        <p><strong>Benefits:</strong></p>
+                        <ul>
+                            <li>Builds strength and stamina.</li>
+                            <li>Enhances focus and balance.</li>
+                            <li>Bend your right knee over your right ankle, keeping your left leg straight.  </li>
+                            <div class="exercise-video" id="video2">
+
+                                <iframe width="370" height="250" src="https://www.youtube-nocookie.com/embed/bcYeuESSrP0?si=6tyzsn9by3LJV6Gu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="text-left mt-2">
+                                <a href="https://youtu.be/bcYeuESSrP0?si=qz46v7b3LJ7a4Xh9" target="_blank">Watch Video</a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> <center><span style="color: red;">Child’s Pose</span></center></h5>
+                        <div class="text-center">
+                            <img src="childs-pose.webp" alt="CHILD POSE" width="300" height="300"></div>
+                        <p><strong>Procedure:</strong></p>
+                        <ul>
+                            <li>Kneel and sit back on your heels.</li>
+                            <li>Extend your arms forward and rest your forehead on the mat.</li>
+                        </ul>
+                        <p><strong>Benefits:</strong></p>
+                        <ul>
+                            <li>Relaxes the body and calms the mind.</li>
+                            <li>Stretches the back and hips.</li>
+                            <li>Reduces stress and fatigue.
+                            </li>
+                            <div class="exercise-video" id="video3">
+                                <iframe width="370" height="250" src="https://www.youtube-nocookie.com/embed/kH12QrSGedM?si=JGKQ8q61W2yv6F1N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="text-left mt-2">
+                                <a href="https://youtu.be/kH12QrSGedM?si=JGKQ8q61W2yv6F1N" target="_blank">Watch Video</a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> <center><span style="color: red;">Cobra Pose</span></center></h5>
+                        <div class="text-center">
+                            <img src="cobra.jpg" alt="COBRA" width="300" height="300"></div>
+                        <p><strong>Procedure:</strong></p>
+                        <ul>
+                            <li>Lie face down and place your hands under your shoulders.</li>
+                            <li>Press into your hands to lift your chest off the ground.</li>
+                        </ul>
+                        <p><strong>Benefits:</strong></p>
+                        <ul>
+                            <li>Strengthens the spine and opens the chest.</li>
+                            <li>Improves digestion.</li>
+                            <div class="exercise-video" id="video4">
+                                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zgvolE4NAH0?si=jdYz9DN0RHfE5Iml" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="text-left mt-2">
+                                <a href="https://youtu.be/zgvolE4NAH0?si=VCoA9BjQ3kp7uELh" target="_blank">Watch Video</a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><center><span style="color: red;">Tree Pose</span> </center></h5>
+                        <div class="text-center">
+                            <img src="Kids_Vrikshasan_updated.jpg" alt="TREE POSE" width="300" height="300"></div>
+                          
+                        <p><strong>Procedure:</strong></p>
+                        <ul>
+                            <li>Stand tall and shift weight onto one foot.</li>
+                            <li>Place the other foot on your inner thigh or calf.</li>
+                            <li>Bring palms together in front of your heart.</li>
+                        </ul>
+                        <p><strong>Benefits:</strong></p>
+                        <ul>
+                            <li>Improves balance and stability.</li>
+                            <li>Enhances concentration.</li>
+                            <li>Enhances concentration and focus.</li>
+                            <div class="exercise-video" id="video5">
+
+                                <iframe width="370" height="250" src="https://www.youtube-nocookie.com/embed/NKhkIS0bwSU?si=kPju9iu6v7d5WdC0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                                <div class="text-left mt-2">
+                                <a href="https://youtu.be/NKhkIS0bwSU?si=kPju9iu6v7d5WdC0" target="_blank">Watch Video</a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><center><span style="color: red;"> Bridge Pose</span></center></h5>
+                        <div class="text-center">
+                            <img src="bridge-pose.webp" alt="Shoulder Press" width="300" height="300"></div>
+                        <p><strong>Procedure:</strong></p>
+                        <ul>
+                            <li>Lie on your back with knees bent.</li>
+                            <li>Press your feet and arms into the floor and lift your hips.</li>
+                        </ul>
+                        <p><strong>Benefits:</strong></p>
+                        <ul>
+                            <li>Strengthens the back and legs.</li>
+                            <li>Relieves stress and anxiety.</li>
+                            <li>Relieves stress and anxiety.</li>
+                            <div class="exercise-video" id="video6">
+                                <iframe width="370" height="250" src="https://www.youtube-nocookie.com/embed/x7jDmQVZ7p8?si=FRoWdNq0ZAoZLmwC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                            <div class="text-left mt-2">
+                                <a href="https://youtu.be/x7jDmQVZ7p8?si=wPn00HKz6mbikOtT" target="_blank">Watch Video</a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+<div>
+    <section id="MEDITATION TECHNIQUES" class="mb-5">
+        <header style="background-color: whitesmoke; padding: 20px; text-align: center; margin-bottom: 20px;">
+            <h1 class="text-center" style="margin: 0; font-size: 2.5rem;">
+                <b><span style="color:black;">MEDITATION TECHNIQUES</span></b><br>
+            </h1>
+        </header> <!-- Added margin-bottom to create space between header and carousel -->
+    </section>
+</div>
+     
+        
+        <div id="meditationCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+            <div class="carousel-inner">
+                <!-- Mindfulness Meditation -->
+                <div class="carousel-item active">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><span style="color: red;">Mindfulness Meditation</span></h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="mindfulness-practices.webp" alt="Mindfulness Meditation" width="100%" height="315">
+                                </div>
+                                <div class="col-md-6">
+                                    <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/6p_yaNFSYao?si=XnCSNnEl0tubyiN3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <p><strong>Procedure:</strong></p>
+                            <ul>
+                                <li>Find a comfortable seated position.</li>
+                                <li>Focus on your breath.</li>
+                                <li>Gently bring your focus back when your mind wanders.</li>
+                            </ul>
+                            <p><strong>Benefits:</strong></p>
+                            <ul>
+                                <li>Reduces stress and anxiety.</li>
+                                <li>Increases self-awareness.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Guided Visualization -->
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><span style="color: red;">Guided Visualization</span></h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="2 med.webp" alt="Guided Visualization" width="100%" height="315">
+                                </div>
+                                <div class="col-md-6">
+                                    <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/Tvs7JNV8NDA?si=CA5aQt4KiWduqBPz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <p><strong>Procedure:</strong></p>
+                            <ul>
+                                <li>Sit or lie down comfortably.</li>
+                                <li>Imagine a peaceful scene and engage your senses.</li>
+                            </ul>
+                            <p><strong>Benefits:</strong></p>
+                            <ul>
+                                <li>Promotes relaxation and reduces stress.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Loving-Kindness Meditation -->
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><span style="color: red;">Loving-Kindness Meditation</span></h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="3med.jpeg" alt="Loving-Kindness Meditation" width="100%" height="315">
+                                </div>
+                                <div class="col-md-6">
+                                    <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/5FizJWS7TG0?si=aByCxfPqJSLVWhZZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <p><strong>Procedure:</strong></p>
+                            <ul>
+                                <li>Close your eyes and focus on your heart area.</li>
+                                <li>Silently repeat phrases of goodwill for yourself and others.</li>
+                            </ul>
+                            <p><strong>Benefits:</strong></p>
+                            <ul>
+                                <li>Increases compassion and empathy.</li>
+                                <li>Reduces negative emotions.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Controls -->
+            <a class="carousel-control-prev" href="#meditationCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#meditationCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        
+        <!-- jQuery, Popper.js, and Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+         <!-- Footer -->
+  <section id="footer" class="gradient-background">
+    <div class="container mt-5">
+      <footer class="py-1 pt-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>General</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Cookie Policy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Legal</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Legal</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terms</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Social</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Intellectual Property</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Properties</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Destinations</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Press Room</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Promo Code</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Tech Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of what's new and exciting from us.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden">Email address</label>
+                <input id="newsletter1" type="email" class="form-control" placeholder="Email address" required>
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>© 2024 Aarogya, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#">GitHub</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Twitter</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Facebook</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </section>
+</body>
+</html>
+        

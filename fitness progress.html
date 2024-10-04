@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+    
+    <style>
+        body {
+            background-image: url('DeWatermark.ai_1728066634476.png'); /* Replace with your image file name */
+            background-size: cover;
+            background-position: center;
+            color: #000000; /* Set text color to black */
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 40vh;
+            width: 80vw;
+        }
+        .summary {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background for readability */
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+           
+            
+        }
+          </style>
+      </head>
+      <body>
+       
+                  
+    <div class="container mt-5">
+    <b> <h1 class="text-center">FITNESS PROGRESS</h1></b>
+        <form id="trackerForm" class="mb-4">
+            <div class="form-group">
+                <b><label for="workoutDate">Workout Date:</label></b>
+                <input type="date" id="workoutDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+            <b> <label for="workoutTime">Workout Time (in minutes):</label></b>
+                <input type="number" id="workoutTime" class="form-control" placeholder="Enter workout time in minutes" required>
+            </div>
+            <div class="form-group">
+            <b><label for="caloriesBurned">Calories Burned:</label></b>
+                <input type="number" id="caloriesBurned" class="form-control" placeholder="Enter calories burned" required>
+            </div>
+        <b><button type="submit" class="btn btn-primary">Add Entry</button></b>
+        </form>
+
+        <div class="chart-container">
+            <canvas id="intakeChart"></canvas>
+        </div>
+
+        <div class="summary">
+        <b>  <h5>Fitness Progress Analysis</h5>
+            <p id="totalWorkouts">Total Workouts: 0</p>
+            <p id="avgCaloriesBurned">Average Calories Burned: 0</p>
+            <p id="avgWorkoutTime">Average Workout Time: 0</p>
+            <p id="trendAnalysis"></p>
+        </div></b>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('intakeChart').getContext('2d');
+        const intakeChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [
+                    {
+                        label: 'Calories Burned',
+                        data: [],
+                        fill: false,
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Workout Time (minutes)',
+                        data: [],
+                        fill: false,
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        tension: 0.1
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        let totalWorkouts = 0;
+        let totalCalories = 0;
+        let totalWorkoutTime = 0;
+
+        document.getElementById('trackerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const workoutDate = document.getElementById('workoutDate').value;
+            const workoutTime = parseInt(document.getElementById('workoutTime').value);
+            const caloriesBurned = parseInt(document.getElementById('caloriesBurned').value);
+
+            // Add data to the chart
+            intakeChart.data.labels.push(workoutDate);
+            intakeChart.data.datasets[0].data.push(caloriesBurned);
+            intakeChart.data.datasets[1].data.push(workoutTime);
+            intakeChart.update();
+
+            // Update statistics
+            totalWorkouts++;
+            totalCalories += caloriesBurned;
+            totalWorkoutTime += workoutTime;
+
+            const avgCalories = (totalCalories / totalWorkouts).toFixed(2);
+            const avgWorkoutTime = (totalWorkoutTime / totalWorkouts).toFixed(2);
+            const trendAnalysis = (totalWorkouts > 0) 
+                ? `Your average calorie burn per workout is ${avgCalories}, keep it up!` 
+                : `No workouts recorded yet.`;
+
+            // Display updated statistics
+            document.getElementById('totalWorkouts').innerText = `Total Workouts: ${totalWorkouts}`;
+            document.getElementById('avgCaloriesBurned').innerText = `Average Calories Burned: ${avgCalories}`;
+            document.getElementById('avgWorkoutTime').innerText = `Average Workout Time: ${avgWorkoutTime} minutes`;
+            document.getElementById('trendAnalysis').innerText = trendAnalysis;
+
+            // Clear the form
+            document.getElementById('trackerForm').reset();
+        });
+    </script>
+      <!-- Footer -->
+  <section id="footer" class="gradient-background">
+    <div class="container mt-5">
+      <footer class="py-1 pt-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>General</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Cookie Policy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Legal</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Legal</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terms</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Social</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Intellectual Property</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Properties</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Destinations</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Press Room</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Promo Code</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Tech Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of what's new and exciting from us.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden">Email address</label>
+                <input id="newsletter1" type="email" class="form-control" placeholder="Email address" required>
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>© 2024 Aarogya, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#">GitHub</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Twitter</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Facebook</a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </section>
+</body>
+</html>
+
